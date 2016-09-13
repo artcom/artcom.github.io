@@ -3,6 +3,8 @@ _site
 .jekyll
 .bundle
 .sass-cache
+.ruby-version
+.ruby-gemset
 Gemfile
 Gemfile.lock
 node_modules
