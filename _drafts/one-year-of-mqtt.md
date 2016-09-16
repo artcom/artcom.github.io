@@ -14,7 +14,7 @@ Right from the start, we were impressed by MQTT, because it provided a lot of us
 
 However, when working with retained messages, we felt that using pub/sub wasn't always the right tool for the job: Sometimes, we only wanted to know the current retained message for a certain topic, not any future changes. To get the current retained message using MQTT, we had to subscribe to the topic, wait for the retained message to arrive, then unsubscribe again.
 
-Apart from being a little cumbersome, there is a more serious problem to this approach: We cannot find out whether there is retained topic for a given topic. If we do not receive a retained message after subscribing, it's either because there is none, or because we have not waited long enough yet. After a few seconds we would be relatively confident, but still not completely sure.
+Apart from being a little cumbersome, there is a more serious problem to this approach: We cannot find out whether there is a retained message for a given topic. If we do not receive a retained message after subscribing, it's either because there is none, or because we have not waited long enough yet. After a few seconds we would be relatively confident, but still not completely sure.
 
 There also is variation of this problem when we want to find out which topics "exist", i.e. which topics have retained messages stored in the broker. While we can subscribe to a wildcard topic like `devices/#`, we cannot tell exactly when all the retained messages have arrived.
 
