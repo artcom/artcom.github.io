@@ -22,7 +22,7 @@ There also is variation of this problem when we want to find out which topics "e
 
 The obvious solution to the problems above is to use some kind of request/response mechanism. So we decided to build an HTTP API that would allow us to query retained messages. Luckily, the broker we use, [HiveMQ](http://www.hivemq.com), has a powerful [plugin interface](http://www.hivemq.com/docs/plugins/latest/) including support for HTTP. That made it easy to build a plugin to provide such an HTTP API.
 
-Today, we're open-sourcing this plugin, the **HTTP API Plugin** for HiveMQ. You can find the source code on [GitHub](http://github.com/artcom/hivemq-http-api-plugin) with ready-to-use `.jar` files in the [releases section](http://github.com/artcom/hivemq-http-api-plugin/releases). For a documentation of the actual API, please refer to the [README](https://github.com/artcom/hivemq-http-api-plugin#http-api).
+Today, we're open-sourcing this plugin, the **Retained Message Query Plugin** for HiveMQ. You can find the source code on [GitHub](https://github.com/artcom/hivemq-retained-message-query-plugin) with ready-to-use `.jar` files in the [releases section](https://github.com/artcom/hivemq-retained-message-query-plugin/releases). For a documentation of the actual API, please refer to the [README](https://github.com/artcom/hivemq-retained-message-query-plugin#http-api).
 
 We hope that you'll find our plugin useful. Feel free to open an issue on GitHub in case you have feedback, questions or want to contribute!
 
@@ -30,4 +30,4 @@ We hope that you'll find our plugin useful. Feel free to open an issue on GitHub
 
 For the sake of completeness, we should also mention that there are limitations, which can be summed up as "MQTT is not a database": Even with QoS 2, order is only guaranteed for messages to the same topic. The query plugin is no replacement for a query language like SQL. And most importantly, there is no support for atomic operations or transactions, i.e. publishing retained messages to multiple topics "at once". So if you need any of that, you should reach for a proper database.
 
-That being said, MQTT and the HTTP API Plugin have proven to be a good fit for our needs. We'll probably use it again in future projects.
+That being said, MQTT and the Retained Message Query Plugin have proven to be a good fit for our needs. We'll probably use it again in future projects.
