@@ -1,9 +1,10 @@
 ---
 layout: post
 title: One Year of MQTT
+excerpt_separator: <!--end-of-excerpt-->
 ---
 We have been using MQTT in production for almost a year now. It's been a pleasant experience so far, thanks to MQTT itself and a small addition we built ourselves.
-
+<!--end-of-excerpt-->
 In the following, we'll assume that you have basic knowledge of MQTT. If you don't, have a look at the [MQTT Essentials](http://www.hivemq.com/blog/mqtt-essentials-part-1-introducing-mqtt) series for an introduction.
 
 ## The Good
