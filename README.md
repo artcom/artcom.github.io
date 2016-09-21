@@ -15,6 +15,10 @@ cd .
 ```
 * Install dependencies: `bundle install`
 
+### Troubleshooting Mac
+
+* [nokogiri install problems]( http://www.nokogiri.org/tutorials/installing_nokogiri.html#mac_os_x)
+
 ### Start Jekyll Server
 
 * `bundle exec jekyll serve --draft`
