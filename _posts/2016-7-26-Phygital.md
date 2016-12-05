@@ -35,7 +35,7 @@ The follwoing criteria were taken into account when choosing the wireless techno
 We've chosen a very simple 433Mhz [ASK-Modulated](https://en.wikipedia.org/wiki/Amplitude-shift_keying) technology, often called "RF433". They are very similar to the 433Mhz wireless modules used for wireless power outlets, for cheap headphones, simple doorbells etc.
 They work _nearly_ like a wire - they just transmit the level on the transmitter's input pin to the receiver's output pin. In an ideal world, we could just use them as wire and connect them to the UART-pins of the microcontroller. That even works sometimes, but is not reliable enough. It needs a protocol that deals better with the specific characteristics of wireless transmission.
 
-![image](https://github.com/elRadish/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/rf433.jpg)
+![image](https://github.com/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/rf433.jpg)
 
 *RF 433 sender and receiver*
 
@@ -52,17 +52,17 @@ Both are running for 200-300 days with 2 CR2032 coin cells.
 
 #### Touch sensor with AtMega328 on perfboard.
 
-![image](https://github.com/elRadish/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/sender.png)
+![image](https://github.com/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/sender.png)
 
 *Sender with touch sensor*
 
 #### Light sensor with AtTiny85 on etched PCB.
 
-![image](https://github.com/elRadish/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/phy_book.png)
+![image](https://github.com/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/phy_book.png)
 
 *Sender with light sensor*
 
-![image](https://github.com/elRadish/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/phy_book_working.gif)
+![image](https://github.com/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/phy_book_working.gif)
 
 *Sender in action*
 
@@ -77,7 +77,7 @@ Additionally, it has a RGB-LED to show its current state:
 * Blue: Receiving wireless message
 * Flashing pink: Transmitter battery low
 
-![image](https://github.com/elRadish/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/receiver.png)
+![image](https://github.com/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/receiver.png)
 
 *Receiver*
 
@@ -92,7 +92,7 @@ Light is sensed by a simple light dependent resistor that is read out once a sec
 We used a AtMega328@16Mhz on a Arduino Pro Mini PCB for the touch sender. It is small and can be made very power efficient when removing some parts (Power regulator, Power LED). The board can be powered directly by the CR2032 coin cells.
 For the second sender, we took a plain AtTiny85 with internal oscillator on a selfmade PCB.
 
-![image](https://github.com/elRadish/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/pcb.jpg)
+![image](https://github.com/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/pcb.jpg)
 
 *PCB exposure*
 
@@ -103,7 +103,7 @@ Atmel microcontrollers can be very power efficient. It is possible to send them 
 
 After switching off as much as possible (Analog-Digital-Converter, Brown-out-detection etc.) power consumption went down to 30uA. That gives around 200-250 days of standby time with 2 CR2032 coin cells. 
 
-![image](https://github.com/elRadish/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/sender_lifecycle.png)
+![image](https://github.com/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/sender_lifecycle.png)
 
 *Power states of the sender*
 
