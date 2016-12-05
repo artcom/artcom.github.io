@@ -52,13 +52,13 @@ Both are running for 200-300 days with 2 CR2032 coin cells.
 
 #### Touch sensor with AtMega328 on perfboard.
 
-![image](h/images/2016-7-26-Phygital/sender.png)
+![image](/images/2016-7-26-Phygital/sender.png)
 
 *Sender with touch sensor*
 
 #### Light sensor with AtTiny85 on etched PCB.
 
-![image](images/2016-7-26-Phygital/phy_book.png)
+![image](/images/2016-7-26-Phygital/phy_book.png)
 
 *Sender with light sensor*
 
