@@ -35,7 +35,7 @@ The follwoing criteria were taken into account when choosing the wireless techno
 We've chosen a very simple 433Mhz [ASK-Modulated](https://en.wikipedia.org/wiki/Amplitude-shift_keying) technology, often called "RF433". They are very similar to the 433Mhz wireless modules used for wireless power outlets, for cheap headphones, simple doorbells etc.
 They work _nearly_ like a wire - they just transmit the level on the transmitter's input pin to the receiver's output pin. In an ideal world, we could just use them as wire and connect them to the UART-pins of the microcontroller. That even works sometimes, but is not reliable enough. It needs a protocol that deals better with the specific characteristics of wireless transmission.
 
-![image](https://github.com/artcom.github.io/blob/phygital/images/2016-7-26-Phygital/rf433.jpg)
+<img style="width: 32%;" src="{{ site.baseurl }}/images/2016-7-26-Phygital/rf433.jpg"/>
 
 *RF 433 sender and receiver*
 
