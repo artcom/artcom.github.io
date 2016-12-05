@@ -37,6 +37,8 @@ They work _nearly_ like a wire - they just transmit the level on the transmitter
 
 <img style="width: 32%;" src="{{ site.baseurl }}/images/2016-7-26-Phygital/rf433.jpg"/>
 
+![image](/images/2016-7-26-Phygital/rf433.jpg)
+
 *RF 433 sender and receiver*
 
 The whole transmitting logic is simple and can be done in software. It has to deal with bad reception and deals with things like sending a preamble to give the receiver a chance to adjust its auto gain control to the signal. Additionally, the data is encoded 4-to-6 bits to achieve a better [DC-bias](https://en.wikipedia.org/wiki/DC_bias) for wireless transmission.
