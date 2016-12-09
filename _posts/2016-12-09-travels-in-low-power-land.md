@@ -56,7 +56,11 @@ constant currents and their voltage drops heavily when higher currents are drawn
 ##### Links
 
 [Video: Ideal battery technology for ESP8266](https://youtu.be/heD1zw3bMhw?list=PL3XBzmAj53Rlu3Byy_GkqG6b-nwEpWku0)
+
+[Video playlist about ESP8266](https://www.youtube.com/playlist?list=PL3XBzmAj53Rlu3Byy_GkqG6b-nwEpWku0)
+
 [ESP8266 power consumption](http://bbs.espressif.com/viewtopic.php?f=6&t=133)
+
 
 ### Hope RF RFM69HCW + AtMega 
 
