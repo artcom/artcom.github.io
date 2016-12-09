@@ -5,18 +5,18 @@ excerpt_separator: <!--end-of-excerpt-->
 tags:
 - draft
 ---
-At cologne, we're evaluating some nice wireless hardware stuff. Here are some first insights.
+At Cologne, we're evaluating some nice wireless hardware stuff. Here are some first insights.
 <!--end-of-excerpt-->
 
 # Part 1
-Currently, we're evaluating wireless technologies for building small, coin cell-driven modules that carry serveral usefuls sensors like:
+Currently, we're evaluating wireless technologies for building small, coin cell-driven modules that carry serveral useful sensors like:
 
 * Accelerometer
 * Compass
 * Brightness / RGB
 * Capacitive touch
 
-They will be produced in small amounts and can be configured and used instantly to create small user interactions for several media exhibits. 
+They are going be produced in small amounts and can be configured and used instantly to create small user interactions for several media exhibits.
 
 **Ideas:**
 
@@ -65,7 +65,7 @@ Deep sleep current is mainly dependent on the current consumption of the microco
 There are ready-made Arduino modules called Moteino with RFM69HCW as well that might be worth trying.
 
 #### Results
-* Good range throughout the whole areea with 17cm wire antenna
+* Good range throughout the whole area with 17cm wire antenna
 * Adjustable power output
 * Maximum current when transmitting ca. 75mA
 * Fast transmission without noitceable delay
@@ -84,8 +84,6 @@ The current was measured with a INA129 I2C current sensor and a small Arduino sk
  
 #### Current peaks
 
-Especially the current peaks are interesting to choose the battery type. Typical lithium coin cells can't handle hugh current draws of several hundred milli amperes. For higher currents, coin cell shaped Li-Ion batteries are available which have only about half of the capacity of lithium cells.
-
 The ESP8266 has been sent to deepsleep - and awakes every 3 seconds. Every 8 times, Wifi is switched on, the other times, it remains off.
 
 The RFM69HCW sends every 10 seconds a short string message with 2 retries at full transmission power. 
@@ -93,5 +91,13 @@ The RFM69HCW sends every 10 seconds a short string message with 2 retries at ful
 ![image](/images/2016-7-12-low-power-land/esp_vs_rfm.jpg)
 
 *Current draw comparison*
+
+#### Powering that stuff
+
+Especially the current peaks are interesting to choose the battery type. Typical lithium coin cells can't handle hugh current draws of several hundred milli amperes. For higher currents, coin cell shaped Li-Ion batteries are available which have only about half of the capacity of lithium cells. The LIR2450 is much larger than the CR2032, but has less capacitiy (210mAh vs. 120mAh). The ESP8266 can only be powered through a LiIon-cell, while the RFM69HCW might be powered through a CR2032 when it's not transmitting at full power.
+
+![image](/images/2016-7-12-low-power-land/coincells.jpg)
+
+*Size comparsion of CR2032 and LR2450 cells*
 
 ...to be continued.
