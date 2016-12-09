@@ -65,7 +65,7 @@ constant currents and their voltage drops heavily when higher currents are drawn
 ### Hope RF RFM69HCW + AtMega 
 
 [RFM69HCW](http://www.hoperf.com/upload/rf/RFM69CW-V1.1.pdf) is a 433Mhz transmitter with integrated protocol and acknowledge handling. It can be combined with any microcontroller with SPI interface. We'll propably going to take a AtMega 32u4 that has an integrated USB stack for easy deployment and debugging.
-Deep sleep current is mainly dependent on the current consumption of the microcontroller itself. The RFM module's standby current is neglectable.
+Deep sleep current is mainly dependent on the current consumption of the microcontroller itself. The RFM module's standby current is negligible.
 There are ready-made Arduino modules called Moteino with RFM69HCW as well that might be worth trying.
 
 #### Results
