@@ -1,11 +1,11 @@
 ---
 layout: post
-title: 'Travels in low-power-land Part 1'
+title: 'Travels in low-power-land - Part 1'
 excerpt_separator: <!--end-of-excerpt-->
 tags:
 - draft
 ---
-At cologne, we're evaluating some nice wireless hardware stuff.
+At cologne, we're evaluating some nice wireless hardware stuff. Here are some first insights.
 <!--end-of-excerpt-->
 
 # Part 1
@@ -87,3 +87,5 @@ The RFM69HCW sends every 10 seconds a short string message with 2 retries at ful
 ![image](/images/2016-7-12-low-power-land/esp_vs_rfm.jpg)
 
 *Current draw comparison*
+
+...to be continued.
