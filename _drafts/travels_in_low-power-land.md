@@ -53,10 +53,16 @@ We evaluated two wireless technolgies:
 Due to the high peak current, powering the ESP8266 through a Lithium coin cell is not possible - these cells are made for low 
 constant currents and their voltage drops heavily when higher currents are drawn. 
 
+##### Links
+
+[Video: Ideal battery technology for ESP8266](https://youtu.be/heD1zw3bMhw?list=PL3XBzmAj53Rlu3Byy_GkqG6b-nwEpWku0)
+[ESP8266 power consumption](http://bbs.espressif.com/viewtopic.php?f=6&t=133)
+
 ### Hope RF RFM69HCW + AtMega 
 
 [RFM69HCW](http://www.hoperf.com/upload/rf/RFM69CW-V1.1.pdf) is a 433Mhz transmitter with integrated protocol and acknowledge handling. It can be combined with any microcontroller with SPI interface. We'll propably going to take a AtMega 32u4 that has an integrated USB stack for easy deployment and debugging.
-Deep sleep current is mainly dependent on the current consumption of the microcontroller itself. The RFM module's standby current is neglectible.
+Deep sleep current is mainly dependent on the current consumption of the microcontroller itself. The RFM module's standby current is neglectable.
+There are ready-made Arduino modules called Moteino with RFM69HCW as well that might be worth trying.
 
 #### Results
 * Good range throughout the whole areea with 17cm wire antenna
