@@ -9,14 +9,14 @@ At Cologne, we're evaluating some nice wireless hardware stuff. Here are some fi
 <!--end-of-excerpt-->
 
 # Part 1
-Currently, we're evaluating wireless technologies for building small, coin cell-driven modules that carry serveral usefuls sensors like:
+Currently, we're evaluating wireless technologies for building small, coin cell-driven modules that carry serveral useful sensors like:
 
 * Accelerometer
 * Compass
 * Brightness / RGB
 * Capacitive touch
 
-They will be produced in small amounts and can be configured and used instantly to create small user interactions for several media exhibits. 
+They are going be produced in small amounts and can be configured and used instantly to create small user interactions for several media exhibits.
 
 **Ideas:**
 
