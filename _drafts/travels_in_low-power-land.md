@@ -5,7 +5,7 @@ excerpt_separator: <!--end-of-excerpt-->
 tags:
 - draft
 ---
-At cologne, we're evaluating some nice wireless hardware stuff. Here are some first insights.
+At Cologne, we're evaluating some nice wireless hardware stuff. Here are some first insights.
 <!--end-of-excerpt-->
 
 # Part 1
