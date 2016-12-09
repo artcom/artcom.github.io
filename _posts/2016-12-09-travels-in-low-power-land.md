@@ -98,10 +98,13 @@ The RFM69HCW sends every 10 seconds a short string message with 2 retries at ful
 
 #### Powering that stuff
 
-Especially the current peaks are interesting to choose the battery type. Typical lithium coin cells can't handle hugh current draws of several hundred milli amperes. For higher currents, coin cell shaped Li-Ion batteries are available which have only about half of the capacity of lithium cells. The LIR2450 is much larger than the CR2032, but has less capacitiy (210mAh vs. 120mAh). The ESP8266 can only be powered through a LiIon-cell, while the RFM69HCW might be powered through a CR2032 when it's not transmitting at full power.
+Especially the current peaks are interesting to choose the battery type. Typical lithium coin cells can't handle high current draws of several hundred milli-amperes. For higher currents, coin cell shaped Li-Ion batteries are available which have only about half of the capacity of lithium cells. The LIR2450 is much larger than the CR2032, but has less capacitiy (210mAh vs. 120mAh). The ESP8266 can only be powered through a LiIon-cell, while the RFM69HCW might be powered through a CR2032 when it's not transmitting at full power. Thus a sensor with the RFM69HCW will very likely have longer standby time while being smaller because in can be powered through a battery type with a much higher energy density.
 
 ![image](/images/2016-7-12-low-power-land/coincells.jpg)
 
 *Size comparsion of CR2032 and LR2450 cells*
+
+
+In the next part, we'll build two prototypes for testing and comparison and we'll see how they will behave in real life.
 
 ...to be continued.
