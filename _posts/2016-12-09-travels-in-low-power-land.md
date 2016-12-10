@@ -7,7 +7,7 @@ excerpt_separator: <!--end-of-excerpt-->
 At Cologne, we're evaluating some nice wireless hardware stuff. Here are some first insights.
 <!--end-of-excerpt-->
 
-# Part 1
+# Part 1 - Get in touch
 Currently, we're evaluating wireless technologies for building small, coin cell-driven modules that carry serveral useful sensors like:
 
 * Accelerometer
