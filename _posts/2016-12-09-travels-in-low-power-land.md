@@ -50,7 +50,6 @@ We evaluated two wireless technolgies:
 * Many modules have 1-4MB flash memory on board with a complete file system implementation that can be used for persisting data
 
 ##### Links
-
 [Video: Ideal battery technology for ESP8266](https://youtu.be/heD1zw3bMhw?list=PL3XBzmAj53Rlu3Byy_GkqG6b-nwEpWku0)
 
 [Video playlist about ESP8266](https://www.youtube.com/playlist?list=PL3XBzmAj53Rlu3Byy_GkqG6b-nwEpWku0)
@@ -105,7 +104,6 @@ Thus a sensor with the RFM69HCW will very likely have longer standby time while 
 *Size comparsion of CR2032 and LR2450 cells*
 
 #### Links
-
 [Coin cells and peak current draw, Whitepaper, TI](http://www.ti.com/lit/wp/swra349/swra349.pdf)
 
 
