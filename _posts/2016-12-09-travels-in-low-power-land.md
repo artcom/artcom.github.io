@@ -97,7 +97,8 @@ Measuring procedure:
 
 ### Powering that stuff
 
-Especially the current peaks are interesting to choose the battery type. Typical lithium coin cells can't handle high current draws of several hundred milli-amperes. For higher currents, coin cell shaped Li-Ion batteries are available which have only about half of the capacity of lithium cells. The LIR2450 is much larger than the CR2032, but has less capacitiy (210mAh vs. 120mAh). The ESP8266 can only be powered through a LiIon-cell, while the RFM69HCW might be powered through a CR2032 when it's not transmitting at full power. Thus a sensor with the RFM69HCW will very likely have longer standby time while being smaller because in can be powered through a battery type with a much higher energy density.
+Especially the current peaks are interesting to choose the battery type. Typical lithium coin cells can't handle high current draws of several hundred milli-amperes. For higher currents, coin cell shaped Li-Ion batteries are available which have only about half of the capacity of lithium cells. The LIR2450 is much larger than the CR2032, but has less capacitiy (210mAh vs. 120mAh). The ESP8266 can only be powered through a Li-Ion-cell, while the RFM69HCW might be powered through a CR2032 when it's not transmitting at full power. A capacitor to smooth out the highest peaks might be another solution to work with CR2032 coin cells.
+Thus a sensor with the RFM69HCW will very likely have longer standby time while being smaller because in can be powered through a battery type with a much higher energy density.
 
 ![image](/images/2016-7-12-low-power-land/coincells.jpg)
 
