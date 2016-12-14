@@ -101,7 +101,7 @@ Thus a sensor with the RFM69HCW will very likely have longer standby time while 
 
 ![image](/images/2016-7-12-low-power-land/coincells.jpg)
 
-*Size comparsion of CR2032 and LR2450 cells*
+*Size comparsion of CR2032 and LIR2450 cells*
 
 #### Links
 [Coin cells and peak current draw, Whitepaper, TI](http://www.ti.com/lit/wp/swra349/swra349.pdf)
