@@ -6,6 +6,9 @@ tags:
 - IoT, golang, wireless, EnOcean
 ---
 The wireless [sensor][1], a [receiver][2] and a little bit of go or ruby code is what it takes to bridge into the IoT world from the convenience of your laptop. Depending on your (or my) perspective you are either interessted in battery free sensors or maybe in how I used go to read the serial port and read decode the [EnOcean][3] [serial][4] [protocol][6] datagrams.
+
+![EnOcean Sensor and USB stick receiver](//raw.githubusercontent.com/artcom/gocean/master/IMG_20170227_104639.jpg)
+
 <!--end-of-excerpt-->
 
 _Note: The EnOcean sensor & receiver combo might not be the the cheapest way of getting an IoT switch integrated but I was looking especially for a wireless solution and really liked the NO batteries needed piezo approach._
@@ -26,8 +29,6 @@ start reading device now...
 Drop the `-v` option to make the program less verbose. Drop the `-id <sensor id>` option to report all sensors. The sensor id option can be used multiple times to add more than one sensor id to the whitelist. When no id is given all received sensor packets are reported. 
 
 ## Hardware
-
-![EnOcean Sensor and USB stick receiver](//raw.githubusercontent.com/artcom/gocean/master/IMG_20170227_104639.jpg)
 
 ### The Sender: IQfy Funk-Drucksensor 450FU-BLS/KKF
 
