@@ -1,12 +1,15 @@
 ---
 layout: post
-title: 'Q: What you get when crossing Interns and VR? <br>A: Pokemon & Counterstrike!'
+title: 'My Co-worker found a Pokémon in VR, in a Counterstrike map!'
 excerpt_separator: <!--end-of-excerpt-->
 tags:
 - draft
 ---
+- **Q:** What you get when crossing Interns and VR?
+- **A:** Pokémon & Counterstrike!'
+
 The write-up of our new interns explaining how they filled up the empty voids
-of cyberspce with some, um, interesting contents.
+of cyberspace with some, um, interesting contents.
 <!--end-of-excerpt-->
 
 ## Follow this post and look what I made out of it!
