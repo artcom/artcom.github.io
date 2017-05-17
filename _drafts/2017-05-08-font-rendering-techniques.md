@@ -143,7 +143,7 @@ better integration further in.
 
 Finally we will have a fluent interface allowing for relative simple routing:
 
-{% highlight js %}
+```javascript
 var Routes = require('./Router/Router');
 var app = new Routes();
 
@@ -159,7 +159,7 @@ app
   });
 app.listen(8080);
 console.log('Server started on Port 8080.');
-{% endhighlight %}
+```
 
 [NodeJS does have]: <//www.npmjs.com/package/http-server>
 [gist with the same goal]: <//gist.github.com/trevordixon/3061477>
