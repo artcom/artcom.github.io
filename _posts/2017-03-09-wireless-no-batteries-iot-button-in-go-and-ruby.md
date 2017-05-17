@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'Wireless & No batteries! EnOcean IoT Button in Go (and/or ruby)'
+author: <a href="https://github.com/crux/">Dirk Lüsebrink</a>
 excerpt_separator: <!--end-of-excerpt-->
 tags:
 - IoT, golang, wireless, EnOcean
