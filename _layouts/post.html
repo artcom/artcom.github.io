@@ -16,9 +16,11 @@ layout: default
     {{ content }}
   </div>
 
-  <div class="date">
+  <!--div class="date">
     {{ page.date | date: "%B %e, %Y" }}
-  </div>
+  </div-->
 
+  {% comment %}
   {% include disqus.html %}
+  {% endcomment %}
 </article>
