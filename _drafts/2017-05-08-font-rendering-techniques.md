@@ -376,6 +376,6 @@ Thanks to the PhantomJS maintainer - even if they've grown to a handful people
 left. (Also the resilient ``#phantomjs`` Channel on ``ìrc.freenode.org``)
 
 [Mongoose]: <//github.com/cesanta/mongoose>
-[github repo]: <//github.com/artcom/phantomjs-renderer>
+[github repo]: <//github.com/artcom/textrender-service>
 
 
