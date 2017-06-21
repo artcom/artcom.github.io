@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'Manta Rhei as Vimeo Video Player Test'
+author: <a href="https://github.com/crux/">Dirk Lüsebrink</a>
 excerpt_separator: <!--end-of-excerpt-->
 ---
 Showing the Manta Rhei kinetic light fixture to test the vimeo jekyll include on this blog. 
