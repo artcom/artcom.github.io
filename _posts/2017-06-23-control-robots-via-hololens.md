@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EV3ControllAR - Control robots via the Microsoft HoloLens
+title: EV3ControllAR - Control Robots via the Microsoft HoloLens
 author: <a href="https://github.com/KReguieg/">Khaled Reguieg</a>
 excerpt_separator: <!--end-of-excerpt-->
 ---
@@ -211,6 +211,6 @@ Next jump into the code and try to build an app based on the information flow.
 
 ### Result
 
-Place Video HERE
+{% include youtube.html id="1dG7WL5qfnE" %}
 
 Made with :heart: at ART+COM AG in Berlin.
