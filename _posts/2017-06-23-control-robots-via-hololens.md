@@ -5,9 +5,9 @@ author: <a href="https://github.com/KReguieg/">Khaled Reguieg</a>
 excerpt_separator: <!--end-of-excerpt-->
 ---
 
-The near future creates a need of a more natural interaction with robots.
-Interacting with gestures and voice commands is a difficult topic in the
-industry in general. So we tried to tackle this issue in the our holodeck.
+Our near future creates a need for more natural interactions with robots,
+such as gestures and voice commands which are still difficult topics to handle in the
+industry. That's why we decided to face this challenge at our holodeck.
 
 ![]({{site.url}}/images/2017-06-22-control-robots-via-hololens/lego-prosthetic-arm.jpg)
 
@@ -25,21 +25,21 @@ Interacting with robots should fit the general terms of human computer interacti
 
 You can reread these heuristics [here](https://www.nngroup.com/articles/ten-usability-heuristics/).
 The controls of the Microsoft HoloLens might not fit those needs
-so far. But nevertheless I jumped into Unity and designed and application
-for my bachelors degree.
+so far, however I jumped into Unity and designed an application
+for my bachelor's degree.
 
 
 
 
 # Idea
 
-I asked my self: How will humans work together with robots in the near future?
-Will there be touchpads and controlsticks on remotes like today
-or will the way of interacting change completely with the rise of
-new technologies? And will humans be able to to adapt to this new way
+I asked myself: How will humans and robots work together in the near future?
+Will there be touchpads and control sticks like today
+or will the way of interacting change completely due to the rise of
+emerging technologies? Above all, will humans be able to adapt this new way
 of interacting with machines?
 
-So I thought let's determine this by creating a prototype and test the application
+To find answers, I decided to create a prototype and test the application
 with users in a thinkaloud test.
 
 
@@ -48,7 +48,7 @@ with users in a thinkaloud test.
 ### Unity
 
 A great game engine any dev knows and the tool of choice when
-creating applications for the HoloLens. (Haha it is so far the only tool)
+creating applications for the HoloLens. (Haha, it is the only tool so far!)
 
 ### MonoBrick Communication Library
 
@@ -88,11 +88,14 @@ Create the UI from the wireframe.
 
 ![]({{site.url}}/images/2017-06-22-control-robots-via-hololens/holo-interface.jpg)
 
-Next jump into the code and try to build an app based on the information flow.
+Next, jump into the code and try to build an app based on the information flow.
 
 ### Implementation
 - Handle the voice and gesture inputs from the HoloLens
 #### HandsManager.cs
+
+- Detect hands and sources pressed
+
 ```csharp
 1 [...]
 2 InteractionManager.SourceDetected += InteractionManager_SourceDetected;
@@ -101,8 +104,10 @@ Next jump into the code and try to build an app based on the information flow.
 13   HandDetected = true;
 14 }
 ```
-- Detect hands and sources pressed
 #### GestureManager.cs
+
+- Define which gestures should be recognized
+
 ```csharp
 1 /// Instantiate the NavigationRecognizer.
 2 NavigationRecognizer = new GestureRecognizer();
@@ -111,8 +116,10 @@ Next jump into the code and try to build an app based on the information flow.
   /// NavigationRecognizer ’s RecognizableGestures .
 5 NavigationRecognizer.SetRecognizableGestures(GestureSettings.Tap | GestureSettings.NavigationX);
 ```
-- Define which gestures should be recognized
 #### GestureAction.cs
+
+- Define what should happend if a gesture is recognized
+
 ```csharp
 1 [...]
 2 public float TranslationSensitivity = 10.0 f;
@@ -139,8 +146,10 @@ Next jump into the code and try to build an app based on the information flow.
 23   }
 24 }
 ```
-- Define what should happend if a gesture is recognized
 #### VoiceManager.cs
+
+- Recognize voice commands and trigger actions
+
 ```csharp
 1 [...]
 2 /// Initialize ...
@@ -174,9 +183,10 @@ Next jump into the code and try to build an app based on the information flow.
 30   }
 31 }
 ```
-- Recognize voice commands and trigger actions
 
 #### EV3Manager.cs
+
+- Wrap the controls of the robot in a manager so you can call the API from everywhere with defined robot movements
 
 ```csharp
 1 using UnityEgine ;
@@ -207,7 +217,6 @@ Next jump into the code and try to build an app based on the information flow.
 26   MotorBlocked = true;
 27 }
 ```
-- Wrap the controls of the robot in a manager so you can call the API from everywhere with defined robot movements
 
 ### Result
 
