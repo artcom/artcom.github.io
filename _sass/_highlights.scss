@@ -1,23 +1,15 @@
 
-.highlight {
-  background-color: #efefef;
-  padding: 7px 7px 7px 10px;
-  border: 1px solid #ddd;
-  margin: 20px 0 20px 0;
-  overflow: auto;
-}
-
 code {
   font-family: $Monospace;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
-.xhighlighter-rouge {
-  padding: 0 5px;
-  background: rgba(255, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 2px;
-  color: #DD5555;
+.highlight {
+  //background-color: #efefef;
+  //border: 1px solid #ddd;
+  margin: 20px 0 20px 0;
+  overflow: auto;
+  padding: 7px 7px 7px 10px;
 }
 
 .highlight .c { color: #586E75 } /* Comment */
