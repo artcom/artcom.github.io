@@ -11,6 +11,15 @@ description: show & tell of what and how we do the things we did.
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars3.githubusercontent.com/u/338346?v=3&s=200
 
+# adding jobs as a new post/page type
+collections:
+  jobs:
+    output: true
+
+defaults:
+  - values:
+      layout: job
+
 #
 # Flags below are optional
 #

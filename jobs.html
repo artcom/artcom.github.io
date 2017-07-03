@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="posts">
+
+{% capture txtinc %}{% include wir-suchen-dich.md %}{% endcapture %}
+{{ txtinc | markdownify }}
+
+  {% for post in site.jobs %}
+    <article class="job">
+
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <div class="conditions">
+          Standort: {{ post.city }},
+          Stelle: {{ post.contract }}
+      </div>
+
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
