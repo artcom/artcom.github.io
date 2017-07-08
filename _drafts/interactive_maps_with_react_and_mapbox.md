@@ -9,23 +9,23 @@ For the [Bird Observatory Center in Skagen](http://www.skagenfuglestation.dk/) w
 # React Integration
 The idea is to render a map as React component and render features as child components as follows:
 
-```
-  <Map>
-    <PointFeature
-      data={ [longitude, latitude] }
-      id={ `circle-outer-${id}` }
-      paint={ {
-        "circle-radius": 5,
-        "circle-color": "green",
-      } } />
-    <PathFeature
-      id={ pathId }
-      data={ geoJsonData }
-      paint={ {
-        "line-width": 3,
-        "line-color": "red"
-      } } />
-  </Map>
+```xml
+<Map>
+  <PointFeature
+    data={ [longitude, latitude] }
+    id={ `circle-outer-${id}` }
+    paint={ {
+      "circle-radius": 5,
+      "circle-color": "green",
+    } } />
+  <PathFeature
+    id={ pathId }
+    data={ geoJsonData }
+    paint={ {
+      "line-width": 3,
+      "line-color": "red"
+    } } />
+</Map>
 ```
 
 ## Map Component
