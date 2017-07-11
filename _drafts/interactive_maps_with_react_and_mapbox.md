@@ -4,12 +4,14 @@ title: Interactive Map Applications with React and Mapbox GL JS
 ---
 
 # Introduction
-For the [Bird Observatory Center in Skagen](http://www.skagenfuglestation.dk/) we had the requirement to implenent many interactive map applications for touchable screens. So our framework of choice is React we wanted to find a way to create maps as react components. This post gives a survey of our solution how to wrap the mapbox gl api with React.
+For the [Bird Observatory Center in Skagen](http://www.skagenfuglestation.dk/) we needed to build  interactive map applications for touchscreens. Because our framework of choice for this project was React we wanted to find a way to create our map applications with React components. This post gives a survey of our solution how to wrap the [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) Api with React.
 
 # React Integration
-The idea is to render a map as React component and render features as child components as follows:
+The idea is to render a map as a React component and to render features as child components as follows.
 
 ```
+Example:
+
   <Map>
     <PointFeature
       data={ [longitude, latitude] }
