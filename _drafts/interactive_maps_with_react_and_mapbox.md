@@ -9,9 +9,8 @@ For the [Bird Observatory Center in Skagen](http://www.skagenfuglestation.dk/) w
 # React Integration
 The idea is to render a map as a React component and to render features as child components as follows.
 
-```
 Example:
-
+```xml
   <Map>
     <PointFeature
       data={ [longitude, latitude] }
