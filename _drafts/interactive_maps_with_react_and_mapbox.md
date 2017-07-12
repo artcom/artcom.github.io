@@ -30,46 +30,72 @@ Example:
 ```
 
 ## Map Component
-- (1) MapboxGL requires an HTML element in which the map will be rendered
-  - render a div component with an innerRef pointing its HTML element to an object
-  - when componentDidMount is called after render the HTML element already exists in the DOM
-  - so here we can create the mapboxgl map object by providing the HTML element object we referenced in the render method before
-  ```
-    <MapContainer innerRef={ e => { this.mapContainer = e } }>
-      { this.state.isReady && children }
-    </MapContainer>
-  ```
-- (2) We have to wait until mapbox is ready before we can draw feaures on the map
-  - in the render method we prevent rendering the children when state is not "ready"
-  - we wait until the first render callback is called to set the components state to "ready"
-  - this triggers a new render call and the child components are allowed to render
-  ```
-    this.map.on("render", () => {
-      if (!this.state.isReady) {
-        this.setState({ isReady: true })
-      }
-    })
-  ```
-- (3) A feature component needs access to the map object, e.g. to add its data source and layer
-  - add the map object to every child with React.Children.map and React.cloneElement in the render method
-  ```
-    const children = React.Children.map(this.props.children, child =>
-      React.cloneElement(child, { map: this.map })
-    )
-  ```
-- (4) Cleanup problem: We have to remove the features before we remove the map, else we run into errors.
-  - With React the cleanup method (componentWillUnmount()) is called before the child elements. If we remove the map here, we evoke errors in the cleanup method of the feature components. The trick is to call it in separate task which is queued and executed after all children are unmounted.
-   ```
-    setTimeout(() => this.map.remove())
-   ```
+##### MapboxGL requires an HTML element in which the map will be rendered
+First we need to render a component with a reference pointing to its DOM element. When componentDidMount() lifecycle method is called we can create the Map object by providing the reference object.
+
+*componentDidMount()*
+```js
+  this.map = new mapboxgl.Map({
+    container: this.mapContainer
+  })
+```
+
+*render()*
+```js
+  <div ref={ e => { this.mapContainer = e } }>
+    ...
+  </div
+```
+
+##### A feature component needs access to the map object, e.g. to add its data source and layer
+Add the map object to every child with React.Children.map and React.cloneElement in the render method
+
+*render()*
+```js
+  const children = React.Children.map(this.props.children, child =>
+    React.cloneElement(child, { map: this.map })
+  )
+
+  ...
+```
+
+##### We have to wait until Mapbox is ready before we can draw features on the map
+We prevent rendering the children when the state of the component is not *ready*. We have to wait until the first render callback is called by Mapbox to set the components state to *ready*. This triggers a new *render()* call. Now the child components are allowed to get rendered.
+
+*componentDidMount()*
+```js
+  this.map.on("render", () => {
+    if (!this.state.isReady) {
+      this.setState({ isReady: true })
+    }
+  })
+```
+
+*render()*
+```js
+
+  ...
+
+  <div ref={ e => { this.mapContainer = e } } >
+    { this.state.isReady && children }
+  </div>
+```
+
+##### Cleanup: We have to remove the features before we remove the map, else we run into errors.
+When the component will be removed from the DOM, *componentWillUnmount()* is called. This method is called top down in the component hierarchy. So the cleanup method of our *Map* component is called before its children. If we remove the map here, we evoke errors because the map features have to be removed first. The trick is to call the map removal in a separate task which is queued and executed after all children are unmounted.
+
+*componentWillUnmount()*
+```js
+setTimeout(() => this.map.remove())
+```
 
 ## Feature Components
-  A map feature also can be realized as a React component. To add a feature like a polyline or a point amongst others, Mapbox demands a data source like an array of geographic coordinates or a geojson object. Then a new layer must be added to the map which refers to the data source and defines the visual appearance of the feature. All these informatios we can provide via properties to the stateless component which wraps the mapbox api calls. We just need to mount, update and unmount these components. Rendering by react is not necessary here.
+A map feature also can be realized as a React component. To add a feature like a polyline or a point amongst others, Mapbox demands a data source like an array of geographic coordinates or a geojson object. Then a new layer must be added to the map which refers to the data source and defines the visual appearance of the feature. All these informatios we can provide via properties to the stateless component which wraps the mapbox api calls. We just need to mount, update and unmount these components. Rendering by react is not necessary here.
 
-  - Map feature lifecycle
-    - componentDidMount()
-      - add source and layer
-    - componentDidUpate()
-      - update paint properties
-    - componentWillUnmount()
-      - remove source and layer
+- Map feature lifecycle
+  - componentDidMount()
+    - add source and layer
+  - componentDidUpate()
+    - update paint properties
+  - componentWillUnmount()
+    - remove source and layer
