@@ -47,8 +47,8 @@ First we need to render a component with a reference pointing to its DOM element
   </div
 ```
 
-##### A feature component needs access to the map object, e.g. to add its data source and layer
-Add the map object to every child with React.Children.map and React.cloneElement in the render method
+##### A feature component needs access to the map object, e.g. to add its data source and graphical layer
+Provide the map object to every child with help of `React.Children.map` and `React.cloneElement`.
 
 *render()*
 ```js
@@ -90,12 +90,47 @@ setTimeout(() => this.map.remove())
 ```
 
 ## Feature Components
-A map feature also can be realized as a React component. To add a feature like a polyline or a point amongst others, Mapbox demands a data source like an array of geographic coordinates or a geojson object. Then a new layer must be added to the map which refers to the data source and defines the visual appearance of the feature. All these informatios we can provide via properties to the stateless component which wraps the mapbox api calls. We just need to mount, update and unmount these components. Rendering by react is not necessary here.
+A map feature also can be realized as a React component. To add a feature like a polyline or a point Mapbox demands a data source (e.g. an array of geographic coordinates or a geojson object). Then a new layer, which defines the appearance of the feature, must be added to the map. This layer must refer to the data source.
+To query features and to connect a layer with a data source a unique feature id is required. We can provide all these informations to the feature component by properties. We just need to mount, update and unmount these components correctly. Rendering by react is not necessary here.
 
-- Map feature lifecycle
-  - componentDidMount()
-    - add source and layer
-  - componentDidUpate()
-    - update paint properties
-  - componentWillUnmount()
-    - remove source and layer
+##### Map feature lifecycle
+`componentDidMount()` - Add source and layer
+```js
+  const { data, id, map, paint } = this.props
+
+  map.addSource(id, {
+    type: "geojson",
+    data
+  })
+
+  map.addLayer({
+    id,
+    source: id,
+    type: "line",
+    paint
+  })
+```
+
+`componentDidUpate()` - e.g. update paint properties
+```js
+  const { id, map, paint } = this.props
+
+  Object.keys(paint).forEach((key) => {
+    map.setPaintProperty(
+      `${id}`, key, paint[key]
+    )
+  })
+```
+
+`componentWillUnmount()` - Remove source and layer
+```js
+  const { id, map } = this.props
+
+  map.removeSource(id)
+  map.removeLayer(id)
+```
+
+`render()` - Do nothing
+```js
+  return null
+```
