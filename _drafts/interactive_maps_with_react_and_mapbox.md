@@ -4,7 +4,12 @@ title: Interactive Map Applications with React and Mapbox GL JS
 ---
 
 # Introduction
-For the [Bird Observatory Center in Skagen](http://www.skagenfuglestation.dk/) we needed to build  interactive map applications for touchscreens. Because our framework of choice for this project was React we wanted to find a way to create our map applications with React components. This post gives a survey of our solution how to wrap the [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) Api with React.
+For the [Bird Observatory Center in Skagen](http://www.skagenfuglestation.dk/) we needed to build interactive map applications for touchscreens. So we' ve decided to use vector rendered maps to achieve smooth and seamless transitions between user interactions like panning and zooming. Because our framework of choice for this project was [React](https://facebook.github.io/react/) we wanted to find a way to create our map applications with React components. This post gives a survey of our solution how to wrap the [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) Api with React. We presume some previous knowledge about React, ES6 and Mapbox GL JS.
+
+For hosting vector tiles we use [tileserver-gl](https://github.com/klokantech/tileserver-gl). You can get free free vector tiles for non-commercial use from [OpenMapTiles](https://openmaptiles.com/).
+
+Mapbox GL JS requires a map style to know what to render in which appearance from which sources. A map style generally is a set of sources and layers. It can be edited and exported by [Maputnik](http://maputnik.com/editor/) or [Mapbox Studio](https://www.mapbox.com/mapbox-studio/).
+If you want to use self hosted tiles, glyphs or fonts you have to provide the corresponding urls manually.
 
 # React Integration
 The idea is to render a map as a React component and to render features as child components as follows.
@@ -31,12 +36,17 @@ Example:
 
 ## Map Component
 ##### MapboxGL requires an HTML element in which the map will be rendered
-First we need to render a component with a reference pointing to its DOM element. When componentDidMount() lifecycle method is called we can create the Map object by providing the reference object.
+First we need to render a component with a reference pointing to its DOM element. When componentDidMount() lifecycle method is called we can create the Map object by providing the reference object. Also we have to provide the style object and set the data source.
 
 *componentDidMount()*
 ```js
+  this.props.style.sources.openmaptiles.tiles = [
+    `${this.props.tileServer}/data/planet-vector/{z}/{x}/{y}.pbf`
+  ]
+
   this.map = new mapboxgl.Map({
-    container: this.mapContainer
+    container: this.mapContainer,
+    style: this.props.style
   })
 ```
 
@@ -134,3 +144,8 @@ To query features and to connect a layer with a data source a unique feature id 
 ```js
   return null
 ```
+
+# Conclusion
+The presented solution works well in our interactive exhibition environment. We just wrapped the components we used while this concept easily allows to extend our little framework with more features and interaction components like zoom controls. But if you want to work with a React library you should have a look on
+  * https://github.com/alex3165/react-mapbox-gl
+  * https://github.com/uber/react-map-gl
