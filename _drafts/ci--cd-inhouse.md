@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'The case for Continuous Delivery & Integration'
-author: <a href="https://github.com/????/">Julian Krumow</a>
+author: <a href="https://github.com/jkrumow/">Julian Krumow</a>
 excerpt_separator: <!--end-of-excerpt-->
 ---
 ## Prinzip
