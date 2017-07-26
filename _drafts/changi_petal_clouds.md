@@ -13,17 +13,17 @@ Recently a new kinetic installation went live in Terminal 4 at Changi Airport, S
 
 When the kinetic installation performs its choreography by moving its golden aluminium rings across the ceiling of the airport terminal it will do this to a music composed by the islandic composer Ólafur Arnalds only for this purpose. In the terminal are multiple vanishing points, equipped with lounge seats and speakers where travelers can listen to the sound.
 
-**!! Show an image or video of the kinetic**
+> !! Show an image or video of the kinetic
 
 But there is also the possibility to listen to the music in quiet over your mobile phone using the official Changi Airport App or the web browser.
 
-**!! Show screenshots**
+> !! Show screenshots
 
 ## Synchronization
 
 The system was split up into three components, each provided by one partner in the project. The kinetic and its control application was providid by the builder of the kinetic MKT and the choreography running on it was programmed by ART+COM. On the other end are the apps provided by [WeesWares](http://www.weeswares.com) - a studio fom Singapur. In between sits a audio synchronization server which synchronizes the music running on the mobile devices with the choreogaphy of the kinetic installation.
 
-**!! Show diagram**
+![]({{site.url}}/images/changi_petal_clouds/system_setup.png)
 
 The kinetic sends UDP packets to the audio sync server. Those packets contain the current playback position within the choreography in milliseconds. The audio sync server relays the timestamp to the mobile clients through a websocket. The mobile clients receive the timestamp and adjust the playback position of the audio material accordingly.
 
@@ -61,14 +61,10 @@ The server calculates the time it took to get the timestamp back and buffers abo
 
 ## Building the Synchronization Server and a Demonstrator
 
-The server was build quite quickly using node.js. See diagram below:
+The server was build quite quickly using node.js. The provide WeesWares with a working example I also wrote a simple iOS app to demonstrate the synchronization concept:
 
-**!! Show diagram**
-
-The provide WeesWares with a working example I also wrote a simple iOS app to demonstrate the synchronization concept:
-
-**!! show video of multiple demonstrators running in parallel**
+> !! show video of multiple demonstrators running in parallel
 
 {% include vimeo.html id="217337340" %}
 
-**!! Maybe an english native speaker should proof read this post?**
+> !! Maybe an english native speaker should proof read this post?
