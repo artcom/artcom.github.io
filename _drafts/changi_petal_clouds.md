@@ -17,8 +17,6 @@ When the kinetic installation performs its choreography by moving its golden alu
 
 But there is also the possibility to listen to the music in quiet over your mobile phone using the official Changi Airport App or the web browser.
 
-> !! Show screenshots
-
 ## Synchronization
 
 The system was split up into three components, each provided by one partner in the project. The kinetic and its control application was providid by the builder of the kinetic MKT and the choreography running on it was programmed by ART+COM. On the other end are the apps provided by [WeesWares](http://www.weeswares.com) - a studio fom Singapur. In between sits a audio synchronization server which synchronizes the music running on the mobile devices with the choreogaphy of the kinetic installation.
