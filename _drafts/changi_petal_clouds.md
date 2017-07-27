@@ -13,7 +13,7 @@ Recently a new kinetic installation went live in Terminal 4 at Changi Airport, S
 
 When the kinetic installation performs its choreography by moving its golden aluminium rings across the ceiling of the airport terminal it will do this to a music composed by the islandic composer Ólafur Arnalds only for this purpose. In the terminal are multiple vantage points, equipped with speakers where travelers can rest and listen to the sound.
 
-> !! Show an image or video of the kinetic
+![]({{site.url}}/images/changi_petal_clouds/2017_ArtCom_Petalclouds_ChangiT4_08954_web-1360x765.png)
 
 But there is also the possibility to listen to the music in quiet over your mobile phone using the official Changi Airport App or the web browser.
 
