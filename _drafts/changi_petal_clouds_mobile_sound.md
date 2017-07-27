@@ -7,13 +7,14 @@ excerpt_separator: <!--end-of-excerpt-->
 ## Introduction
 
 Recently a new kinetic installation went live in Terminal 4 at Changi Airport, Singapur. This installation is quite special, not only because of its sheer size but because it offers an audio experience too. In this post I want to discuss what how this mobile audio experience was implemented.
+
+![]({{site.url}}/images/changi_petal_clouds_mobile_sound/2017_ArtCom_Petalclouds_ChangiT4_08954_web-1360x765.png)
+
 <!--end-of-excerpt-->
 
 ## Choreography and Music
 
 When the kinetic installation performs its choreography by moving its golden aluminium rings across the ceiling of the airport terminal it will do this to a music composed by the islandic composer Ólafur Arnalds only for this purpose. In the terminal are multiple vantage points, equipped with speakers where travelers can rest and listen to the sound.
-
-![]({{site.url}}/images/changi_petal_clouds/2017_ArtCom_Petalclouds_ChangiT4_08954_web-1360x765.png)
 
 But there is also the possibility to listen to the music in quiet over your mobile phone using the official Changi Airport App or the web browser.
 
@@ -21,7 +22,7 @@ But there is also the possibility to listen to the music in quiet over your mobi
 
 The system was split up into three components, each provided by one partner in the project. The kinetic and its control application was providid by the builder of the kinetic MKT and the choreography running on it was programmed by ART+COM. On the other end are the apps provided by [WeesWares](http://www.weeswares.com) - a studio fom Singapur. In between sits a audio synchronization server which synchronizes the music running on the mobile devices with the choreogaphy of the kinetic installation.
 
-![]({{site.url}}/images/changi_petal_clouds/system_setup.png)
+![]({{site.url}}/images/changi_petal_clouds_mobile_sound/system_setup.png)
 
 The kinetic sends UDP packets to the audio sync server. Those packets contain the current playback position within the choreography in milliseconds. The audio sync server relays the timestamp to the mobile clients through a websocket. The mobile clients receive the timestamp and adjust the playback position of the audio material accordingly.
 
@@ -29,7 +30,7 @@ The kinetic sends UDP packets to the audio sync server. Those packets contain th
 
 Of course the best approach would have been to synchronize ausio sync server and clients via ntp to cope with the nondeterministic timing of data packets transmitted over the internet. Since NTP is based on UDP and most mobile network carriers block UDP traffic this would not have worked. Even the handling of regular websockets can be very difficult because of the problematic proxy configurations of the carriers.
 
-So we decided to use websockets and a heuristic approach to deal with timing jitter. To make the websocket connection as robust as possible we used socket.io. This framework wraps websocket communication inside an own protocol, which enables a client to constantly up- or downgrade from websocket to long polling etc.
+So we decided to use websockets and a heuristic approach to deal with timing jitter. To make the websocket connection as robust as possible we used [Socket.IO](https://github.com/socketio). This framework wraps websocket communication inside an own protocol, which enables a client to constantly up- or downgrade from websocket to long polling etc.
 
 To eliminate jitter at least a bit the server sends a `sync` message to the client:
 
@@ -59,10 +60,10 @@ The server calculates the time it took to get the timestamp back and buffers abo
 
 ## Building the Synchronization Server and a Demonstrator
 
-The server was build quite quickly using node.js. The provide WeesWares with a working example I also wrote a simple iOS app to demonstrate the synchronization concept:
+The server was built quite quickly using [Node.js](https://nodejs.org/en/). The provide WeesWares with a working example I also wrote a simple iOS app to demonstrate the synchronization concept:
 
 > !! show video of multiple demonstrators running in parallel
 
-{% include vimeo.html id="217337340" %}
+{% include youtube.html id="xLy2SaSQAtA" %}
 
 > !! Maybe an english native speaker should proof read this post?
