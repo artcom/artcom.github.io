@@ -11,7 +11,7 @@ Recently a new kinetic installation went live in Terminal 4 at Changi Airport, S
 
 ## Choreography and Music
 
-When the kinetic installation performs its choreography by moving its golden aluminium rings across the ceiling of the airport terminal it will do this to a music composed by the islandic composer Ólafur Arnalds only for this purpose. In the terminal are multiple vanishing points, equipped with lounge seats and speakers where travelers can listen to the sound.
+When the kinetic installation performs its choreography by moving its golden aluminium rings across the ceiling of the airport terminal it will do this to a music composed by the islandic composer Ólafur Arnalds only for this purpose. In the terminal are multiple vantage points, equipped with speakers where travelers can rest and listen to the sound.
 
 > !! Show an image or video of the kinetic
 
