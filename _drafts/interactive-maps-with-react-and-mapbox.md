@@ -2,7 +2,7 @@
 layout: post
 title: Interactive Map Applications with React and Mapbox GL JS
 ---
-<img style="clip: rect(500px,60px,200px,0px); margin-bottom:15px;" src="{{site.url}}/images/interactive-maps-with-react-and-mapbox/globe-1920.jpg"/>
+<img style="margin-bottom:15px;" src="{{site.url}}/images/interactive-maps-with-react-and-mapbox/globe-1920.jpg"/>
 For the [Bird Observatory Center in Skagen](http://www.skagenfuglestation.dk/) we needed to build interactive map applications for touchscreens. So we' ve decided to use vector rendered maps to achieve smooth and seamless transitions between user interactions like panning and zooming. Because our framework of choice for this project was [React](https://facebook.github.io/react/) we wanted to find a way to create our map applications with React components. This post gives a survey of our solution how to wrap the [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) Api with React. We presume some previous knowledge about React, ES6 and Mapbox GL JS.
 
 For hosting vector tiles we use [tileserver-gl](https://github.com/klokantech/tileserver-gl). You can get free free vector tiles for non-commercial use from [OpenMapTiles](https://openmaptiles.com/).
