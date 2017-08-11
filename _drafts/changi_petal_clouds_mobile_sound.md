@@ -4,13 +4,16 @@ title: 'Creating a Mobile Audio Experience at Changi Airport'
 author: <a href="https://github.com/jkrumow/">Julian Krumow</a>
 excerpt_separator: <!--end-of-excerpt-->
 ---
-## Introduction
-
 Recently a new kinetic installation went live in Terminal 4 at Changi Airport, Singapur. This installation is quite special, not only because of its sheer size but because it offers an audio experience too. In this post I want to describe how this mobile audio experience was implemented.
 
 ![]({{site.url}}/images/changi_petal_clouds_mobile_sound/2017_ArtCom_Petalclouds_ChangiT4_08954_web-1360x765.png)
 
 <!--end-of-excerpt-->
+
+For the non-technical description of the project you can check out the official [artcom project page] or this [Changi Airport Youtube Video]. The post here focuses on the audio sync features of the installation.
+
+[artcom project page]: https://artcom.de/en/project/petalclouds/
+[Changi Airport Youtube Video]: https://www.youtube.com/watch?v=OgMo6ZBc5lw
 
 ## Choreography and Music
 
@@ -20,8 +23,9 @@ Furthermore travelers can listen to the music in quiet over their mobile phone f
 
 ## Synchronization
 
-The system was split up into three components, each provided by one partner in the project. The kinetic and its control application was providid by the builder of the kinetic MKT and the choreography running on it was programmed by ART+COM. On the other end are the apps provided by [WeesWares](http://www.weeswares.com) - a studio fom Singapur. In between sits an audio synchronization server which synchronizes the music running on the mobile devices with the choreogaphy of the kinetic installation.
+The system was split up into three components, each provided by one partner in the project. The kinetic and its control application was providid by the builder of the kinetic MKT and the choreography running on it was programmed by ART+COM. On the other end are the apps provided by [WeesWares] - a studio fom Singapur. In between sits an audio synchronization server which synchronizes the music running on the mobile devices with the choreogaphy of the kinetic installation.
 
+[WeesWares]: http://www.weeswares.com
 ![]({{site.url}}/images/changi_petal_clouds_mobile_sound/system_setup.png)
 
 The kinetic sends UDP packets to the audio sync server. Those packets contain the current playback position within the choreography in milliseconds. The audio sync server relays the timestamp to the mobile clients through a websocket. The mobile clients receive the timestamp and adjust the playback position of the audio material accordingly.
@@ -60,7 +64,7 @@ The server calculates the time it took to get the timestamp back and buffers abo
 
 ## Building the Synchronization Server and a Demonstrator
 
-The server was built quite quickly using [Node.js](https://nodejs.org/en/). The provide WeesWares with a working example I also wrote a simple iOS app to demonstrate the synchronization concept:
+The server was built quite quickly using [Node.js](https://nodejs.org/en/). To provide [WeesWares] with a working example I also wrote a simple iOS app to demonstrate the synchronization concept:
 
 > !! show video of multiple demonstrators running in parallel
 
