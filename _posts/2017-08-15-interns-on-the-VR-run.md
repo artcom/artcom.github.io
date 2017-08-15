@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Congrats to Our Interns on the VR Run!'
+title: Congrats to Our Interns on the VR Run!
 author: <a href="https://github.com/crux/">Dirk Lüsebrink</a>
 excerpt_separator: <!--end-of-excerpt-->
 ---
@@ -8,14 +8,14 @@ Many congrats to the [KAPPA Team] which just [won the Global VR Hackathon German
 
 ![]({{site.url}}/images/vr-interns-on-the-run/a3c32763af202732817324b54ebad57e.jpg)
 <!--end-of-excerpt-->
-Point is, they did all great, but of course I'm specially proud of our interns [khaled] and [mio] which where part of the team as well as [thereza] who joins our engineering team in september. 
+Point is, they all did great, but of course I'm specially proud of our interns [khaled] and [mio] which where part of the team as well as [thereza] who joins our engineering team in september. 
 
 Now you can read all this in detail in the [original chinese][yivian]. If you prefer the real thing, go check out the [source code repository]. 
 
 ![]({{site.url}}/images/vr-interns-on-the-run/741a2ec823c6586d0822647a83c60c78.jpg)
 
 
-I'm really happy for the team, and I'm looking forward to continue working on insteresting VR / AR / 360 projects with them in the @artcom yolodeck. Stay tuned, we publish on our VR projects on this channel here soon. 
+I'm really happy for the team, and I'm looking forward to continue working on interesting VR / AR / 360 projects with them in the @artcom yolodeck. Stay tuned, we publish on our VR projects on this channel here soon. 
 
 Most importantly, __ALL THE BEST LUCK FOR YOUR GLOBAL FINAL IN CHINA NOW!__ Go get the main prize now! 100.000 USD makes for a big splendid party I guess ;)
 
