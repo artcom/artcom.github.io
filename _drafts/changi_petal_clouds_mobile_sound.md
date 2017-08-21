@@ -40,7 +40,7 @@ To eliminate jitter at least a bit the server sends a `sync` message to the clie
 
 ```json
 {
-  "time": 12347435,
+  "time": 1477994400,
   "position": 120000,
   "offset": 800
 }
@@ -54,7 +54,7 @@ The client immediately acknowledges the message by returning the `time` value:
 
 ```json
 {
-  "time": 12347435
+  "time": 1477994400
 }
 ```
 
