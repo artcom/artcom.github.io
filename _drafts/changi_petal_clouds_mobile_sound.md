@@ -66,8 +66,4 @@ The server calculates the time it took to get the timestamp back and buffers abo
 
 The server was built quite quickly using [Node.js](https://nodejs.org/en/). To provide [WeesWares] with a working example I also wrote a simple iOS app to demonstrate the synchronization concept:
 
-> !! show video of multiple demonstrators running in parallel
-
 {% include youtube.html id="xLy2SaSQAtA" %}
-
-> !! Maybe an english native speaker should proof read this post?
