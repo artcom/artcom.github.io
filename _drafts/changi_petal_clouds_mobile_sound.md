@@ -2,6 +2,7 @@
 layout: post
 title: 'Creating a Mobile Audio Experience at Changi Airport'
 author: <a href="https://github.com/jkrumow/">Julian Krumow</a>
+image: /images/changi_petal_clouds_mobile_sound/2017_ArtCom_Petalclouds_ChangiT4_08954_web-1360x765.png
 excerpt_separator: <!--end-of-excerpt-->
 ---
 Recently a new kinetic installation went live in Terminal 4 at Changi Airport, Singapore. This installation is quite special, not only because of its mechatronic complexity and sheer size but because it offers an audio experience too. In this post I want to describe how this mobile audio experience was implemented.
@@ -10,7 +11,7 @@ Recently a new kinetic installation went live in Terminal 4 at Changi Airport, S
 
 <!--end-of-excerpt-->
 
-For the artistic, non-technical description of the project you can check out the official [artcom project page] and the official [Changi Airport Video]. The post here focuses on the audio sync features of the installation.
+For the artistic, non-technical description of the project please find the official [artcom project page] and the official [Changi Airport Video]. The post here focuses on the audio sync features of the installation.
 
 [artcom project page]: https://artcom.de/en/project/petalclouds/
 [Changi Airport Video]: https://www.youtube.com/watch?v=OgMo6ZBc5lw
