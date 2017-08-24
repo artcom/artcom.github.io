@@ -28,8 +28,10 @@ Aside from the fixed locations, travellers can listen to the music in quiet over
 
 ## Synchronization
 
-The system was split up into three components, each provided by one partner in the project. The kinetic and its control application was providid by the builder of the kinetic MKT and the choreography running on it was programmed by ART+COM. On the other end are the apps provided by [WeesWares] - a studio fom Singapore. In between sits an audio synchronization server which synchronizes the music running on the mobile devices with the choreogaphy of the kinetic installation.
+The system was split up into three components, each provided by one partner in the project. The kinetic and its control application was provided by the builder of the kinetic [MKT]. All choreography running on the kinetic was programmed by ART+COM. On the receiving side are the mobile apps provided by [WeesWares] - a studio fom Singapore. In between sits the audio synchronization server by [artcom] which synchronizes the music running on the mobile devices with the choreography of the kinetic installation.
 
+[artcom]: http://artcom.github.io/
+[MKT]: http://www.mkt-ag.de/
 [WeesWares]: http://www.weeswares.com
 ![]({{site.url}}/images/changi_petal_clouds_mobile_sound/system_setup.png)
 
@@ -71,6 +73,13 @@ The server calculates the time it took to get the timestamp back and buffers abo
 
 ## Building the Synchronization Server and a Demonstrator
 
-The server was built quite quickly using [Node.js](https://nodejs.org/en/). To provide [WeesWares] with a working example I also wrote a simple iOS app to demonstrate the synchronization concept:
+The server was built quite quickly using [Node.js]. To provide [WeesWares] with a working example I also wrote a simple iOS app to demonstrate the synchronization concept:
 
 {% include youtube.html id="xLy2SaSQAtA" %}
+
+In case you're have further questions about this app or are in general interested in our kinetic programming and otherwise please do not hesitate to [mail us]. 
+
+have fun
+
+[Node.js]: https://nodejs.org/en/
+[mail us]: mailto:dev@artcom.de
