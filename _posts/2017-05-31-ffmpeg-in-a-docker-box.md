@@ -17,7 +17,7 @@ You call the box *container* of course. Nonetheless, [FFmpeg] and its [compilati
 There are only two little problems: 
 
  1. How do I get it running on **my system** ?
- 2. Which combination of the gazillion params and options to I need for **my task**?
+ 2. Which combination of the gazillion params and options do I need for **my task**?
 
 I can't help you with the second question. For the first one the nice people at [coconut.co] simply caged [FFmpeg] inside a docker container. Brilliant, gone the hassle!
 
