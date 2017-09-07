@@ -5,7 +5,6 @@ author: <a href="https://github.com/KReguieg/">Khaled Reguieg</a>
 excerpt_separator: <!--end-of-excerpt-->
 ---
 
-# The new Microsoft Motion Controllers and Acer Mixed Reality Headset
 Today we had the chance to take a first look at the new Microsoft Motion Controllers and the Acer Mixed Reality (MR) headset in our office.
 As partner for a health/medicine research project we are about to create a mixed reality tutorial and instructions for a lab, where medics in India can learn the procedure to learn the process of produce the product. We will keep you up-to-date on this blog.
 
