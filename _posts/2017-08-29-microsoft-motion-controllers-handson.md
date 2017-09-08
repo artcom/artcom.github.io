@@ -9,7 +9,8 @@ Today we had the chance to take a first look at the new Microsoft Motion Control
 As partner for a health/medicine research project made by [Diagnost-X](http://diagnost-x.de/) we are about to create a mixed reality tutorial and instructions for a lab, which empowers medics in India to learn the procedure needed producing the product. We will keep you up-to-date about this project on this blog.
 
 ![]({{site.url}}/images/2017-08-29-microsoft-motion-controllers-handson/maria-amazed-by-mr.jpg)
-
+<!--end-of-excerpt-->
+ 
 ## First Look
 
 First a small unpack video for you.
