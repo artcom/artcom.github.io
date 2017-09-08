@@ -6,7 +6,7 @@ excerpt_separator: <!--end-of-excerpt-->
 ---
 
 Today we had the chance to take a first look at the new Microsoft Motion Controllers and the Acer Mixed Reality (MR) headset in our office.
-As partner for a health/medicine research project we are about to create a mixed reality tutorial and instructions for a lab, where medics in India can learn the procedure to learn the process of produce the product. We will keep you up-to-date on this blog.
+As partner for a health/medicine research project made by [Diagnost-X](http://diagnost-x.de/) we are about to create a mixed reality tutorial and instructions for a lab, which empowers medics in India to learn the procedure needed producing the product. We will keep you up-to-date about this project on this blog.
 
 ![]({{site.url}}/images/2017-08-29-microsoft-motion-controllers-handson/maria-amazed-by-mr.jpg)
 
@@ -45,7 +45,7 @@ Once setup, just plug-in the bluetooth dongle and connect the controllers via th
 
 ## Hello World
 
-A samll example on how to use them and a demoscene will follow as soon as we find time.
+A small example on how to use them and a demoscene will follow as soon as we find time.
 
 To be continued...
 
