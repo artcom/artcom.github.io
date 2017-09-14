@@ -56,8 +56,8 @@ To eliminate jitter at least a bit the server sends a `sync` message to the clie
 }
 ```
 
-The field `position` is a timestamp in milliseconds that represents the current point in the choreography.
 The field `time` describes the actual time on the server.
+The field `position` is a timestamp in milliseconds that represents the current point in the choreography.
 The field `offset` is the approximated latency between server and client. The sum of these two values is the current playback position on the client.
 
 The client immediately acknowledges the message by returning the `time` value:
