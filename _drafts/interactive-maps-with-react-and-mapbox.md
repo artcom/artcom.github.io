@@ -104,8 +104,10 @@ A map feature also can be realized as a React component. To add a feature like a
 To query features and to connect a layer with a data source a unique feature id is required. We can provide all these informations to the feature component by properties. We just need to mount, update and unmount these components correctly. Rendering by react is not necessary here.
 
 ##### Map feature lifecycle
-`componentDidMount:` - Add source and layer
+`componentDidMount:`
 ```js
+  // Add source and layer
+
   const { data, id, map, paint } = this.props
 
   map.addSource(id, {
@@ -121,8 +123,10 @@ To query features and to connect a layer with a data source a unique feature id 
   })
 ```
 
-`componentDidUpate:` - e.g. update paint properties
+`componentDidUpate:` - e.g.
 ```js
+  // Update paint properties
+
   const { id, map, paint } = this.props
 
   Object.keys(paint).forEach((key) => {
@@ -132,16 +136,20 @@ To query features and to connect a layer with a data source a unique feature id 
   })
 ```
 
-`componentWillUnmount:` - Remove source and layer
+`componentWillUnmount:` -
 ```js
+  // Remove source and layer
+
   const { id, map } = this.props
 
   map.removeSource(id)
   map.removeLayer(id)
 ```
 
-`render:` - Do nothing
+`render:`
 ```js
+  // Do nothing :)
+
   return null
 ```
 
