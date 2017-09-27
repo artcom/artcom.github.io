@@ -26,7 +26,7 @@ These techniques are catgorized as "Time-of-flight" or "Time-of-arrival" techniq
 Another approach is to measure the angle from which a radio signal is "seen". This is called "Angle-of-arrival". The angle is much less influenced by obstacles (but it is) and independent from RSSI. This approach needs specialized antenna arrays for measuring the angle.
 
 # Quuppa 
-[Quuppa](http://quuppa.com) is developed by the Finland-based company "Quuppa Oy". They're providing an Angle-of-Arrival based system that uses Bluetooth Low Energy signals.
+[Quuppa](http://quuppa.com) is developed by the Finland-based company "Quuppa Oy". It is an Angle-of-Arrival based system that uses Bluetooth Low Energy advertising signals.
 It can locate specialized "Beacons" as well as mobile devices that can be programmed to send custom BLE advertising packets - like nearly all current Android and iOS smartphones.
 Depending on the locator density, Quuppa provides 2D or 3D indoor positioning.
 
@@ -39,7 +39,6 @@ In addition to plain posititing data, zones can be defined.
 ### Locator
 Locators are specizalized antennas that measure the angle of arrival of BLE devices. They must be mounted under the ceiling, free from nearby obstacles.
 They are connected via ethernet and powered through PoE.
-
 ![Locator](https://artcom.github.io/images/2017-09-27-quuppa/locator.jpg)
 
 ### Focusing Locator
@@ -53,7 +52,6 @@ It's a Java Swing Application which feels a little oldschool, but it just runs o
 ![Moving beacons](https://artcom.github.io/images/2017-09-27-quuppa/siteplanner.jpg)
 
 ## Deployment
-
 For deployment, a precise site plan is essential. A laser-meter should be used to determine or verify all dimensions.
 Distribution of the locators can be planned beforehand in the site-planner which provides a rough estimate of the locator range and gives a good starting point. If there are special areas where location quality is more important, this should be considered when planning the site. The closer the locators are to these locations, the better the quality of the position can be expected. 
 We experienced that locator distances between 6 and 10 meters are convenient for a good coverage.
@@ -80,7 +78,7 @@ For the second measurment, the beacon is placed very close to the locator. The v
 ![Static beacons](https://artcom.github.io/images/2017-09-27-quuppa/static.png)
 
 ## Summary
-Quuppa is a robust indoor positioning system which gives quiet accurate results under good conditions.
+Quuppa is a robust indoor positioning system which gives quiet accurate results under good conditions. It needs some experience during installation but provides reliable results in a range between 0,2 - 1m, depending on the conditions. The closer to the locator, the better the results. 
 
 ### Pros
 * Measurement workflow is well-guided
@@ -89,6 +87,7 @@ Quuppa is a robust indoor positioning system which gives quiet accurate results 
 ### Cons
 * Needs many locators
 * Expensive hardware investments
+* Locators are visible at the ceiling
 
 ## Further reading:
 [Basic principles of the RF technologies for location estimation](http://www.electronicdesign.com/communications/what-s-difference-between-measuring-location-uwb-wi-fi-and-bluetooth
