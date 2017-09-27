@@ -28,21 +28,29 @@ Another approach is to measure the angle from which a radio signal is "seen". Th
 # Quuppa 
 [Quuppa](http://quuppa.com) is developed by the Finland-based company "Quuppa Oy". They're providing an Angle-of-Arrival based system that uses Bluetooth Low Energy signals.
 It can locate specialized "Beacons" as well as mobile devices that can be programmed to send custom BLE advertising packets - like nearly all current Android and iOS smartphones.
+Depending on the locator density, Quuppa provides 2D or 3D indoor positioning.
 
 ## Quuppa Ecosystem
 ### QPE
-The Quuppa Positioning Engine is a server component running in Apache Tomcat that does the processing of the raw data and provides positioning data in various formats.
+The Quuppa Positioning Engine is a server component running in Apache Tomcat that does the processing of the raw data and provides positioning data in various formats via http, UDP and file-sharing. Data output can be configured by the user (JSON, CSV)
+In addition to plain posititing data, zones can be defined.
+![Moving beacons](https://artcom.github.io/images/2017-09-27-quuppa/qpe.jpg)
 
 ### Locator
 Locators are specizalized antennas that measure the angle of arrival of BLE devices. They must be mounted under the ceiling, free from nearby obstacles.
 They are connected via ethernet and powered through PoE.
 
+![Locator](https://artcom.github.io/images/2017-09-27-quuppa/locator.jpg)
+
 ### Focusing Locator
 The focusing locator contains the same hardware as the locators but another software. It is used to determine the mounting angle of the locators.
+
+![Focusing locator](https://artcom.github.io/images/2017-09-27-quuppa/focusing.jpg)
 
 ### Site Planner
 The Quuppa Site Planner is the central planning and deployment tool. It is used for planning the distribution of the locators, for identifying the locators on location, for determining their mounting position and finally for deployment of the final project.
 It's a Java Swing Application which feels a little oldschool, but it just runs on every operating system we tried and is stable and pretty ergonomic.
+![Moving beacons](https://artcom.github.io/images/2017-09-27-quuppa/siteplanner.jpg)
 
 ## Deployment
 
@@ -54,10 +62,36 @@ The most time consuming step during deployment is the mounting of the locators a
 The determination of the orientation (called "focusing") is done by aiming with the focusing locator towards the locators from two or more known positions in the site-plan.
 After at least two measurements per locator, the site-planner gives feedback about the quality of the measurements. It needs some experience to find the right points and distances for the focusing. This step is essential for the quality of the positioning and should be done properly. 
 
-## Experiences
+## Experiences and measurements
 
+Grid distance in all drawings: 1m
 
+### Moving beacons
+A beacon with highest advertising rate is moved along a defined line multiple times. The positions are recorded and drawn with Quuppa Data Player. The position measurement is best in the middle of the area where there are no obstacles between locators and beacons.
+Especially at the lower end of the area, the beacon coverage is bad which results in less precision.
 
-Further reading:
+![Moving beacons](https://artcom.github.io/images/2017-09-27-quuppa/movingOnLine.png)
+
+### Static beacons
+Beacons with highest advertising rate (ca. 8 Hz) are placed at a static position for 15 minutes. Position is recorded an drawn with Quuppa Data Player.
+The first beacon is placed between two locators. It's position is varying around 1m. The variaton is much larger along the line between the locators. This shows that vertical angle measurement seems to be less precise than horizontal angle measurement.
+For the second measurment, the beacon is placed very close to the locator. The variation of position is much lower.
+
+![Static beacons](https://artcom.github.io/images/2017-09-27-quuppa/static.png)
+
+## Summary
+Quuppa is a robust indoor positioning system which gives quiet accurate results under good conditions.
+
+### Pros
+* Measurement workflow is well-guided
+* Many BLE-enabled devices can act as beacon
+
+### Cons
+* Needs many locators
+* Expensive hardware investments
+
+## Further reading:
 [Basic principles of the RF technologies for location estimation](http://www.electronicdesign.com/communications/what-s-difference-between-measuring-location-uwb-wi-fi-and-bluetooth
 )
+
+[Master Thesis - Quuppa in Hospital](https://repository.tudelft.nl/islandora/object/uuid:31da4059-5dac-4e60-93d7-36cad2d8ab46?collection=education)
