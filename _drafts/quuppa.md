@@ -29,6 +29,8 @@ Another approach is to measure the angle from which a radio signal is "seen". Th
 [Quuppa](http://quuppa.com) is developed by the Finland-based company "Quuppa Oy". It is an Angle-of-Arrival based system that uses Bluetooth Low Energy advertising signals.
 It can locate specialized "Beacons" as well as mobile devices that can be programmed to send custom BLE advertising packets - like nearly all current Android and iOS smartphones.
 Depending on the locator density, Quuppa provides 2D or 3D indoor positioning.
+They claim to reach an average position accuracy of 0.5m, under special circumstances even less. 
+![Error](http://quuppa.com/wp/wp-content/uploads/2015/04/Location-error.jpg)
 
 ## Quuppa Ecosystem
 ### QPE
@@ -78,7 +80,7 @@ For the second measurment, the beacon is placed very close to the locator. The v
 ![Static beacons](https://artcom.github.io/images/2017-09-27-quuppa/static.png)
 
 ## Summary
-Quuppa is a robust indoor positioning system which gives quiet accurate results under good conditions. It needs some experience during installation but provides reliable results in a range between 0,2 - 1m, depending on the conditions. The closer to the locator, the better the results. 
+Quuppa is a robust indoor positioning system which gives quiet accurate results under good conditions. It needs some experience during installation but provides reliable results in a range between 0,2 - 1m, depending on the conditions. Under good circumstances, this is close to the 0,5m claimed by Quuppa on their website. The closer to the locator, the better the results. 
 
 ### Pros
 * Measurement workflow is well-guided
