@@ -64,10 +64,12 @@ After at least two measurements per locator, the site-planner gives feedback abo
 
 ## Experiences and measurements
 
+We tested the accuracy with moving beacons as well as with static beacons, on different positions distributed over the Quuppa-covered area.
+
 Grid distance in all drawings: 1m
 
 ### Moving beacons
-A beacon with highest advertising rate is moved along a defined line multiple times. The positions are recorded and drawn with Quuppa Data Player. The position measurement is best in the middle of the area where there are no obstacles between locators and beacons.
+A beacon with highest advertising rate is moved along a defined line multiple times. The positions are recorded and drawn with the Quuppa Data Player. The position measurement is best in the middle of the area where there are no obstacles between locators and beacons.
 Especially at the lower end of the area, the beacon coverage is bad which results in less precision.
 
 ![Moving beacons](https://artcom.github.io/images/2017-09-27-quuppa/movingOnLine.png)
