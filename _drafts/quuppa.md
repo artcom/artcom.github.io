@@ -6,56 +6,65 @@ excerpt_separator: <!--end-of-excerpt-->
 ---
 
 Indoor navigation is still an undecided game. 
-Outside of buildings GPS, Glonass and Galileo are the big players, all of them based roughly on the same principles, often assisted by technologies like A-GPS or Googles Geolocation API, which merely aim on speeding up the technology for the user. 
-But as soon as we enter a building and get out of reach of the satellites' signals, things are becoming surprisingly complicated.
-We evaluated and installed an indoor positioning system called "Quuppa". Here's a summary of our experiences.
+Outside of buildings GPS, Glonass and Galileo are the big players, all of them based roughly on the same principle: Measuring the time the signal needs from sender to receiver.
+But as soon as we enter a building and get out of reach of the satellites' signals, things become surprisingly complicated. There are many solutions that provide indoor location estimation with different technical approaches. 
+We evaluated and installed the indoor positioning system "Quuppa". Here's a summary of our experiences.
 <!--end-of-excerpt-->
 
 # Quuppa 
-[Quuppa](http://quuppa.com) is developed by the Finland-based company "Quuppa Oy". It is an Angle-of-Arrival based system that uses Bluetooth Low Energy advertising signals.
-It locates specialized "Beacons" as well as mobile devices that can be programmed to send custom BLE advertising packets - like nearly all current Android and iOS smartphones.
+[Quuppa](http://quuppa.com) is developed by the Finland-based company "Quuppa Oy". It is an Angle-of-Arrival based system that uses [Bluetooth Low Energy](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) advertising signals.
+It locates several kinds of "Beacons" as well as standard mobile devices with BLE 4.0 support.
 Depending on the locator density, Quuppa provides 2D or 3D indoor positioning.
-[They claim to reach an average position accuracy of 0.5m](http://quuppa.com/features/), under special circumstances even better. 
+[They claim to reach an average position accuracy of 0.5m](http://quuppa.com/features/), under special circumstances even better.
 ![Error](http://quuppa.com/wp/wp-content/uploads/2015/04/Location-error.jpg)
 
-There is a nice [Demo Video](https://www.youtube.com/watch?v=0vMoiSkOUgI) of Quuppa at an icehockey match. It is quiet impressive at the first glance. But keep in mind that it is very hard to compare the Quuppa view with the realworld movements of the players on the field. 
+There is a nice [Demo Video](https://www.youtube.com/watch?v=0vMoiSkOUgI) of Quuppa at an icehockey match. It is quiet impressive at the first glance. But keep in mind that it is very hard to compare the Quuppa view with the realworld movements of the players on the field.
 Better have a look at the players waiting at the border of the field. They are hardly moving in reality but are pretty nervous in the Quuppa view. Take into account that the dimensions of the field is 60x30m to have an idea of the position error.
 
 ## Our results
 Quuppa is a solid indoor positioning system which gives quiet accurate results under good conditions. It needs some experience during installation but provides reliable results in a range between 0,2 - 1m, depending on the conditions. Under good circumstances, this is close to the 0,5m claimed by Quuppa on their website. The closer to the locator, the better the results. 
-Quuppa provides a lot of data besides raw positions, like smoothed positions, zone data, kalman filtered positions, accuracy estimation and covariance matrices.
+Quuppa provides a lot of data besides raw positioning data, like smoothed positions, zone data, kalman filtered positions, accuracy estimation and covariance matrices for the beacons.
 Smoothed positions have a noticeable delay.
 
 ### Pros
-* Measurement workflow is well-guided
-* Most BLE devices can act as beacon
-* Comfortable and reliable software ecosystem
+* Deployment workflow is well documented
+* BLE 4.0 devices can act as beacon
+* Comfortable and mature software ecosystem
 
 ### Cons
 * Needs many locators
 * Expensive hardware
 * Locators are visible at the ceiling
-* Ethernet connection for all locators necessary
+* Ethernet connection for all locators mandatory
 
 ## Experiences and measurements
 
-We tested the accuracy with moving beacons as well as with static beacons, on different positions distributed over the Quuppa-covered area.
+We tested the accuracy with moving beacons as well as with static beacons, on different positions distributed over the covered area.
 The term "beacon" is used for every device that can be located by Quuppa, no matter if it is a mobile device or a propietary Quuppa beacon.
 
 *Grid distance in all drawings: 1m*
 
 ### Moving beacon
-_A beacon with highest advertising rate is moved along a defined line multiple times. The positions are recorded and drawn with the Quuppa Data Player._
+_A beacon with highest advertising rate (ca. 9 Hz) is moved along a marked line multiple times. The trajectory is recorded and drawn with the Quuppa Data Player._
 
 The position accuracy is best in the middle of the area where there are no obstacles between locators and beacons.
 Especially at the lower end of the area, the beacon coverage is bad which results in less precision.
 
 ![Moving beacons](https://artcom.github.io/images/2017-09-27-quuppa/movingOnLine.png)
 
+Playback with 16x speed of movement of 2 beacons along a straight line. The error in the measurement is pretty constant at certain positions.
+
+{% include youtube.html id="Q3sJ956ZBkE" %}
+
+The positions of the beacons are drawn as heatmap.
+
+![Ehrenfeld heatmap](https://artcom.github.io/images/2017-09-27-quuppa/ehrenfeld.jpg)
+
+
 ### Static beacon
 _Beacons with highest advertising rate (ca. 8 Hz) are placed at a static position for 15 minutes. Position is recorded an drawn with Quuppa Data Player._
 
-The first beacon is placed between two locators. Its calculated position has a variance of ca. 1m. The variaton is much higher along the line between the locators. This shows that vertical angle measurement seems to be less precise than horizontal angle measurement.
+The first beacon is placed on the imaginary between two locators. Its calculated position has a variance of ca. 1m. The variaton is much higher along the line between the locators. This shows that vertical angle measurement seems to be less precise than horizontal angle measurement.
 
 ![Static beacons](https://artcom.github.io/images/2017-09-27-quuppa/static1.jpg)
 
@@ -63,15 +72,11 @@ For the second measurement, the beacon is placed very close to the locator. The 
 
 ![Static beacons](https://artcom.github.io/images/2017-09-27-quuppa/static2.jpg)
 
-{% include youtube.html id="swbKzIE3Iig" %}
-![Ehrenfeld heatmap](https://artcom.github.io/images/2017-09-27-quuppa/ehrenfeld.jpg)
 
 ## Quuppa Ecosystem
 
-Here's a short overview over the Quuppa Ecosystem.
-
 ### QPE
-The Quuppa Positioning Engine is a server component running in Apache Tomcat that does the processing of the raw data and provides positioning data in various formats via http, UDP and file-sharing. The data output format can be configured by the user (JSON, CSV)
+The Quuppa Positioning Engine is a server component running in Apache Tomcat that does the processing of the raw data and provides positioning data through http, UDP and file-sharing. The data output format can be configured by the user (JSON, CSV)
 In addition to plain posititing data, polygonal zones can be defined. 
 Additionally, it can record all data to a binary file that can be played back later with the Quuppa Data Player.
 ![Moving beacons](https://artcom.github.io/images/2017-09-27-quuppa/qpe.jpg)
@@ -89,29 +94,29 @@ The focusing locator contains the same hardware as the locators but another soft
 ![Focusing locator](https://artcom.github.io/images/2017-09-27-quuppa/focusing.jpg)
 
 ### Beacon
-Besides mobiles devices, several types of BLE beacons can be located as well. Quuppa provides their own beacons which can be configured in many details like advertising rate, sleep cycles, ID etc. The batteries are not changeable, but Quuppa claims a battery lifetime of many years, dependend on the configuration.
+Besides mobiles devices, several types of BLE beacons can be located as well. Quuppa provides their own beacons which can be configured in many details like advertising rate, sleep cycles, ID etc. The batteries are not replaceable, but Quuppa claims a battery lifetime of many years, dependend on the configuration.
 
 ### Site Planner
 The Quuppa Site Planner is the central planning and deployment tool. It is used for planning the distribution of the locators, for identifying the locators on location, for determining their mounting position and finally for deployment of the final project.
-It's a Java Swing Application which feels a little oldschool, but it just runs on every operating system we tried and is stable and pretty ergonomic.
+It is a Java Swing Application which feels a little oldschool, but it runs on every operating system we tried and is stable and pretty ergonomic.
 
 ![Moving beacons](https://artcom.github.io/images/2017-09-27-quuppa/siteplanner.jpg)
 
 ### Data Player
-Java tool to play back the recorded positioning data or to show a live stream from the QPE.
+Java application to play back the recorded positioning data or to show a live stream from QPE.
 
 ## Deployment
-For deployment, a precise site plan is essential. A laser-meter should be used to determine or verify all dimensions.
-The distribution of the locators can be planned beforehand in the site-planner which provides an estimate of the locator range as heatmap and gives a good starting point. If there are dedicated areas where location quality is crucial, this should be considered when planning the site. 
+For deployment, a precise site plan is essential. A laser-meter is mandatory to determine or verify all important dimensions.
+The distribution of the locators can be planned beforehand in the site-planne. It provides an estimate of the locator range as heatmap and gives a good starting point. If there are dedicated areas where location quality is crucial, this should be considered when planning the site.
 We experienced that locator distances between 6 and 10 meters are convenient for a good coverage.
  
 The most time consuming step during deployment is the mounting of the locators and the determination of their exact position and orientation.
-The determination of the orientation (called "focusing") is done by aiming with the focusing locator towards each locator from two or more known positions in the site-plan.
+The determination of the orientation (called "focusing") is done by aiming the focusing locator towards each locator from two or more known positions in the site-plan.
 After at least two measurements per locator, the site-planner gives feedback about the quality of the measurements by comparing the angle of the focusing locator based on the individual measurements. 
-It needs some experience to find the right points and distances for the focusing. This step is essential for the quality of the positioning and should be done properly. 
+It needs some experience to find the optimal points and distances for the focusing step. This is essential for the quality of the positioning and should be done properly.
 
 # Indoor location technologies
-This gives a rough overview over different technologies for indoor location determination.
+Finally, here is a rough overview over different technologies for indoor location determination.
 Most system can be categorized into the following groups. Some combine the listed approaches.
 
 ## Angle based
@@ -124,7 +129,7 @@ Most system use the signal strength of multiple WiFi or Bluetooth senders with k
 ## Time based
 "Time-of-flight" or "[Time-of-arrival](https://de.wikipedia.org/wiki/Time_of_Arrival)" techniques.
 A much more precise indicator for the distance between sender and receiver is the time the signal takes from sender to receiver or for the whole round trip. GPS is based on that approach.
-Not all radio signals have optimal characterisitcs for that technique. There is noise, there are reflections etc. which makes is hard to detect the precise arrival of a signal. Roughly speaking, narrow band signals like WiFi and Bluetooth are less suitable than wide band signals like [UWB](https://en.wikipedia.org/wiki/Ultra-wideband). The wireless technologies that are used in smartphones and computers at the time of writing are narrow band standards and thus aren't ideal for time based location estimation.
+Not all radio signals have optimal characterisitcs for that technique. There is noise, there are reflections etc. which makes is hard to detect the precise arrival of a signal. Roughly speaking, narrow band signals like WiFi and Bluetooth are less suitable than wide band signals like [UWB](https://en.wikipedia.org/wiki/Ultra-wideband). 
 
 # Further reading
 
