@@ -15,6 +15,7 @@ Two indoor positioning systems were set up in the lab: the Quuppa system and the
 To be able to evaluate and compare the accuracy of different indoor positioning systems, true coordinates were compared to estimated coordinates. The coordinates (true coordinates) of 18 points on a grid with a grid distance of 1m were determined in our office using a laser-meter (Fig. 1).
 
 ![Fig. 1](https://artcom.github.io/images/2017-10-12-ips-evaluation/ehrenfeld.png)
+
 Fig. 1
 
 Nodes to be positioned (mainly smart phones) were placed at the different points and the position provided by the different positioning systems  (estimated coordinates) were recorded.
