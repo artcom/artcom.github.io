@@ -25,6 +25,7 @@ In order to automate the evaluation a software solution consisting of a [backend
 Two experiments were performed, using the Quuppa and the GoIndoor systems respectively. For each measurement the 2D error was calculated as the distance between the estimated coordinates and the true coordinates of the position of the node, taking into account only horizontal coordinates(x and y). The Average 2D error was found to be significantly lower for the Quuppa system (0.69m) than for the GoIndoor system (2.59m) in our experimental conditions (Fig. 2). Furthermore the variance of the 2D errors was also lower for the Quuppa system (0.20m) than for the GoIndoor system (1.66m). Globally the Quuppa system allows a significantly higher positioning accuracy in static conditions.
 
 ![Fig. 2](https://artcom.github.io/images/2017-10-12-ips-evaluation/2d_accuracy.png)
+
 Fig. 2
 
 2D errors were also analysed per point for the Quuppa (Fig. 3) and the GoIndoor (Fig. 4) systems.
