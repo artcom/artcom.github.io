@@ -53,7 +53,7 @@ Two experiments were performed, using the Quuppa and the GoIndoor systems respec
 
 *B*
 
-*Fig. 4. GoIndoor per point position errors. The 2D error is plotted on the z axis and the corresponding point position is plotted on the x and y axes. The 2D error is color coded from blue for an error of 0m to red for an error of 4m and above.*
+*Fig. 3. GoIndoor per point position errors. The 2D error is plotted on the z axis and the corresponding point position is plotted on the x and y axes. The 2D error is color coded from blue for an error of 0m to red for an error of 4m and above.*
 
 The per point results confirm the global results and allow a more fine grained analysis of the positioning accuracy in the experimental space.
 
