@@ -37,7 +37,7 @@ Two experiments were performed, using the Quuppa and the GoIndoor systems respec
   <iframe width="400" height="300" frameborder="0" scrolling="yes" src="https://plot.ly/~stefand/9.embed?link=false&modebar=false&autosize=True"></iframe>
 </div>
 
-*Fig. 2. 2D accuracy average.*
+*Fig. 2. 2D accuracy average. Error bars represent SD.*
 
 2D errors were also analyzed per point for the Quuppa (Fig. 3A) and the GoIndoor (Fig. 3B) systems.
 
