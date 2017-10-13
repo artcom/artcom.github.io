@@ -5,7 +5,7 @@ author: <a href="https://github.com/globz-eu/">Stefan Dieterle</a>
 excerpt_separator: <!--end-of-excerpt-->
 ---
 
-Indoor positioning systems take over where satellite-based systems' are becoming too inaccurate due to signal attenuation by building structures. There is a plethora of indoor positioning systems on the market and choosing the most appropriate one can be challenging. Those systems use a wide range of technical solutions and differ in:
+Indoor positioning systems take over where satellite-based systems are becoming too inaccurate due to signal attenuation by building structures. There is a plethora of indoor positioning systems on the market and choosing the most appropriate one can be challenging. Those systems use a wide range of technical solutions and differ in:
 - ease of use
 - reactivity
 - power usage
