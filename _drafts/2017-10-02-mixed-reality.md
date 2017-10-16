@@ -266,8 +266,8 @@ out for this operation.
 
 Explore the differences in color rooms with this handy tool by @franciscouzo:
 
-<!-- iframe src="https://franciscouzo.github.io/image_colors/" width="100%" height="500px">
-</iframe -->
+<iframe src="https://franciscouzo.github.io/image_colors/" width="100%" height="500px">
+</iframe>
 
 [chroma-gist]: https://gist.github.com/DarkMio/fb3b0adea1327e3fade7f7b34db6e892
 
