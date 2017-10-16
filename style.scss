@@ -23,6 +23,11 @@ body {
   color: $darkGray;
 }
 
+sup {
+  vertical-align: super;
+  font-size: 65%;
+}
+
 .container {
   margin: 0 auto;
   max-width: 740px;
