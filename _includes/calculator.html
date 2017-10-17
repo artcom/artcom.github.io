@@ -1,0 +1,94 @@
+<script>   
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('abc');
+    var colBuf = document.getElementById("sel-col-buf");
+    var depBuf = document.getElementById("sel-dep-buf");
+    var res = document.getElementById("sel-res");
+    var front = document.getElementById("chk-front");
+    var back = document.getElementById("chk-back");
+    var light = document.getElementById("chk-light");
+    var fps = document.getElementById("field-fps");
+    var latency = document.getElementById("field-latency");
+    var elements = [colBuf, depBuf, res, front, back, light, fps, latency];
+    
+    function collect() {
+        var arr = [];
+        for(var i = 0; i < 3; i++) {
+            arr.push(parseInt(elements[i].value));
+        }
+        for(var i = 3; i < 6; i++) {
+            arr.push(elements[i].checked);
+        }
+        for(var i = 6; i < 8; i++) {
+            arr.push(parseInt(elements[i].value));
+        }
+
+        return arr;
+    }
+
+    var value = document.getElementById('field-val');
+    var valUp = document.getElementById('field-val-up');
+    var bufSize = document.getElementById('field-bufsize');
+    var callback = function() {
+        var col = collect();
+        var bits = col[0] + col[1];
+        var data = bits * col[2];
+        var val = 0;
+        for(var j = 3; j < 6; j++) {
+            console.log(col[j])
+            if(col[j]) {
+                val += data;
+            }
+        }
+        var sVal = (val / 1024 / 1024).toFixed(2);
+        value.innerHTML = sVal;
+        valUp.innerHTML = sVal;
+        var totalData = Math.ceil(col[6] * (col[7] / 1000)) * val;
+        bufSize.innerHTML = (totalData / 1024 / 1024).toFixed(2);
+    };
+    for(var i = 0; i < elements.length; i++) {
+        var cur = elements[i];
+        cur.addEventListener('change', callback);
+    }
+    callback();
+});
+</script>
+
+
+[(<select id="sel-col-buf">
+    <option value="0" disabled selected>Color Buffer</option>
+    <option value="8">ARGB 8</option>
+    <option value="16">ARGB 16</option>
+    <option value="32">ARGB 32</option>
+    <option value="32">2A 10R 10G 10B</option>
+    <option value="16">5R 6G 5B</option>
+  </select>
+  +
+  <select id="sel-dep-buf">
+    <option value="0" disabled selected>Depth Buffer</option>
+    <option value="0">Disabled</option>
+    <option value="8">8 Bit</option>
+    <option value="16">16 Bit</option>
+    <option value="24">24 Bit</option>
+  </select>)
+  x
+  <select id="sel-res">
+    <option value="8294400">3840 x 2160 (4k)</option>
+    <option value="1166400" selected>1920 x 1080</option>
+    <option value="921600">1280 x 720</option>
+  </select>
+  ] x
+  (
+  <input type="checkbox" id="chk-front" checked> Front +
+  <input type="checkbox" id="chk-back" checked> Back +
+  <input type="checkbox" id="chk-light"> Lightning
+  )
+  <br>
+  = <span id="field-val">0.00</span><span id="field-unit">MB per frame</span>
+  <br>
+  <input type="number" value="30" id="field-fps">fps x
+  <input type="number" value="250" id="field-latency">ms x
+  <span id="field-val-up">0.00</span>MB
+  <br>
+  = <span id="field-bufsize"></span>MB
+  
