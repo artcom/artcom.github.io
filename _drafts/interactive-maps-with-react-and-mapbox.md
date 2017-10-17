@@ -3,12 +3,19 @@ layout: post
 title: Interactive Map Applications with React and Mapbox GL JS
 ---
 <img style="margin-bottom:15px;" src="{{site.url}}/images/interactive-maps-with-react-and-mapbox/globe-1920.jpg"/>
-For the [Bird Observatory Center in Skagen](http://www.skagenfuglestation.dk/) we had the requirement to build interactive map applications for touchscreens. So we' ve decided to use vector rendered maps to achieve smooth and seamless transitions between user interactions like panning and zooming. Because our framework of choice for this project was [React](https://facebook.github.io/react/) we wanted to find a way to create our map applications with React components. This post gives a survey of our solution how to wrap the [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) Api with React. We presume some previous knowledge about React, ES6 and Mapbox GL JS.
+For the [Bird Observatory Center in Skagen](http://www.skagenfuglestation.dk/) we' ve decided to use vector rendered maps. We wanted to find a way to create our map applications as React components.
 
-For hosting vector tiles we use [tileserver-gl](https://github.com/klokantech/tileserver-gl). You can get free free vector tiles for non-commercial use from [OpenMapTiles](https://openmaptiles.com/).
+This post gives a survey of our solution how to wrap the [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) Api with React. We presume some previous knowledge about React, ES6 and Mapbox GL JS.
 
-Mapbox GL JS requires a map style to know what to render in which appearance from which sources. A map style generally is a set of sources and layers. It can be edited and exported by [Maputnik](http://maputnik.com/editor/) or [Mapbox Studio](https://www.mapbox.com/mapbox-studio/).
-If you want to use self hosted tiles, glyphs or fonts you have to provide the corresponding urls manually.
+Requirements:
+
+* For hosting vector tiles we use [tileserver-gl](https://github.com/klokantech/tileserver-gl).
+
+* You can get free free vector tiles for non-commercial use from [OpenMapTiles](https://openmaptiles.com/).
+
+* Mapbox GL JS requires a map style to know what to render in which appearance from which sources. A map style generally is a set of sources and layers. It can be edited and exported by [Maputnik](http://maputnik.com/editor/) or [Mapbox Studio](https://www.mapbox.com/mapbox-studio/).
+
+* If you want to use self hosted tiles, glyphs or fonts you have to provide the corresponding urls manually to the map style.
 
 
 # React Integration
@@ -38,8 +45,14 @@ Example:
 ##### MapboxGL requires an HTML element
 First we need to render a component with a reference pointing to its DOM element. When componentDidMount() lifecycle method is called we can create the Map object by providing the reference object. Also we have to provide the style object and set the data source.
 
+Required as properties:
+- Map Style
+- Tile Server Url
+
 `componentDidMount:`
 ```js
+
+  // set the tileserver as source in the style object
   this.props.style.sources.openmaptiles.tiles = [
     `${this.props.tileServer}/data/planet-vector/{z}/{x}/{y}.pbf`
   ]
@@ -100,7 +113,7 @@ setTimeout(() => this.map.remove())
 ```
 
 ## Feature Components
-A map feature also can be realized as a React component. To add a feature like a polyline or a point Mapbox demands a data source (e.g. an array of geographic coordinates or a geojson object). Then a new layer, which defines the appearance of the feature, must be added to the map. This layer must refer to the data source.
+A map feature can also be realized as a React component. To add a feature like a polyline or a point, Mapbox demands a data source (e.g. an array of geographic coordinates or a geojson object). Then a new layer, which defines the appearance of the feature, must be added to the map. This layer must refer to the data source.
 To query features and to connect a layer with a data source a unique feature id is required. We can provide all these informations to the feature component by properties. We just need to mount, update and unmount these components correctly. Rendering by react is not necessary here.
 
 ##### Map feature lifecycle
@@ -154,5 +167,5 @@ To query features and to connect a layer with a data source a unique feature id 
 ```
 
 # Conclusion
-The presented solution works well in our interactive exhibition environment. We just wrapped the components we used while this concept easily allows to extend our little framework with more features and interaction components like zoom controls. This is a lightweight solution to support those features we needed in our application.
-There are some open source libraries which wrap Mapbox GL JS. We tried some, but they integrated not so well in our application setup and we didn't want to include further third party dependecies. But if you want to work with one of those librares, you should have a look at [react-mapbox-gl](https://github.com/alex3165/react-mapbox-gl) or [react-map-gl](https://github.com/uber/react-map-gl).
+The presented solution works well in our interactive exhibition environment. We just wrapped the components we used. This concept easily allows to extend our little framework with more features and interaction components like zoom controls. It is a lightweight solution to support those features we needed in our application.
+There are some open source libraries which wrap Mapbox GL JS. If you want to work with one of those librares, you should have a look at [react-mapbox-gl](https://github.com/alex3165/react-mapbox-gl) or [react-map-gl](https://github.com/uber/react-map-gl).
