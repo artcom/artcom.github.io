@@ -49,123 +49,147 @@ Required as properties:
 - Map Style
 - Tile Server Url
 
-`componentDidMount:`
 ```js
 
-  // set the tileserver as source in the style object
-  this.props.style.sources.openmaptiles.tiles = [
-    `${this.props.tileServer}/data/planet-vector/{z}/{x}/{y}.pbf`
-  ]
+  componentDidMount() {
 
-  this.map = new mapboxgl.Map({
-    container: this.mapContainer,
-    style: this.props.style
-  })
+    // set the tileserver as source in the style object
+    this.props.style.sources.openmaptiles.tiles = [
+      `${this.props.tileServer}/data/planet-vector/{z}/{x}/{y}.pbf`
+    ]
+
+    this.map = new mapboxgl.Map({
+      container: this.mapContainer,
+      style: this.props.style
+    })
+  }
 ```
 
-`render:`
-```xml
-  <div ref={ e => { this.mapContainer = e } }>
-    ...
-  </div>
+```js
+  render() {
+
+    <div ref={ e => { this.mapContainer = e } }>
+      ...
+    </div>
+  }
+
 ```
 
 ##### A feature component needs access to the map object
 To add a feature, the map object must be provided to every child with the help of `React.Children.map` and `React.cloneElement`.
 
-`render:`
 ```js
-  const children = React.Children.map(this.props.children, child =>
-    React.cloneElement(child, { map: this.map })
-  )
+  render() {
 
-  ...
+    const children = React.Children.map(this.props.children, child =>
+      React.cloneElement(child, { map: this.map })
+    )
+
+    ...
+  }
+
 ```
 
 ##### We have to wait until Mapbox is ready
 We have to prevent rendering the children when the state of the component is not *ready*. We have to wait until the first render callback is called by Mapbox to set the components state to *ready*. This triggers a new *render()* call. Now the child components are allowed to get rendered.
 
-`componentDidMount:`
 ```js
-  this.map.on("render", () => {
-    if (!this.state.isReady) {
-      this.setState({ isReady: true })
-    }
-  })
+  componentDidMount() {
+
+    this.map.on("render", () => {
+      if (!this.state.isReady) {
+        this.setState({ isReady: true })
+      }
+    })
+  }
 ```
 
-`render:`
-```xml
+```js
+  render() {
 
-  ...
+    ...
 
-  <div ref={ e => { this.mapContainer = e } } >
-    { this.state.isReady && children }
-  </div>
+    <div ref={ e => { this.mapContainer = e } } >
+      { this.state.isReady && children }
+    </div>
+  }
+
 ```
 
 ##### Cleanup: We have to remove the features before we remove the map, else we run into errors.
 When the component will be removed from the DOM, *componentWillUnmount()* is called. This method is called top down in the component hierarchy. So the cleanup method of our *Map* component is called before its children. If we remove the map here, we evoke errors because the map features have to be removed first. The trick is to call the map removal in a separate task which is queued and executed after all children are unmounted.
 
-`componentWillUnmount:`
 ```js
-setTimeout(() => this.map.remove())
+
+  componentWillUnmount() {
+
+    setTimeout(() => this.map.remove())
+  }
 ```
 
 ## Feature Components
 A map feature can also be realized as a React component. To add a feature like a polyline or a point, Mapbox demands a data source (e.g. an array of geographic coordinates or a geojson object). Then a new layer, which defines the appearance of the feature, must be added to the map. This layer must refer to the data source.
-To query features and to connect a layer with a data source a unique feature id is required. We can provide all these informations to the feature component by properties. We just need to mount, update and unmount these components correctly. Rendering by react is not necessary here.
+To query features and to connect a layer with a data source, a unique feature id is required. We can provide all these informations to the feature component by properties. We just need to mount, update and unmount these components correctly. Rendering by react is not necessary here.
 
 ##### Map feature lifecycle
-`componentDidMount:`
 ```js
-  // Add source and layer
 
-  const { data, id, map, paint } = this.props
+  componentDidMount() {
 
-  map.addSource(id, {
-    type: "geojson",
-    data
-  })
+    // Add source and layer
 
-  map.addLayer({
-    id,
-    source: id,
-    type: "line",
-    paint
-  })
+    const { data, id, map, paint } = this.props
+
+    map.addSource(id, {
+      type: "geojson",
+      data
+    })
+
+    map.addLayer({
+      id,
+      source: id,
+      type: "line",
+      paint
+    })
+  }
 ```
 
-`componentDidUpate:` - e.g.
 ```js
-  // Update paint properties
+  componentDidUpate() {
 
-  const { id, map, paint } = this.props
+    // e.g update paint properties
 
-  Object.keys(paint).forEach((key) => {
-    map.setPaintProperty(
-      `${id}`, key, paint[key]
-    )
-  })
+    const { id, map, paint } = this.props
+
+    Object.keys(paint).forEach((key) => {
+      map.setPaintProperty(
+        `${id}`, key, paint[key]
+      )
+    })
+  }
 ```
 
-`componentWillUnmount:` -
 ```js
-  // Remove source and layer
+  componentWillUnmount() {
 
-  const { id, map } = this.props
+    // Remove source and layer
 
-  map.removeSource(id)
-  map.removeLayer(id)
+    const { id, map } = this.props
+
+    map.removeSource(id)
+    map.removeLayer(id)
+  }
 ```
 
-`render:`
 ```js
-  // Do nothing :)
+  render() {
 
-  return null
+    // Do nothing :)
+
+    return null
+  }
 ```
 
 # Conclusion
-The presented solution works well in our interactive exhibition environment. We just wrapped the components we used. This concept easily allows to extend our little framework with more features and interaction components like zoom controls. It is a lightweight solution to support those features we needed in our application.
+The presented solution works well in our interactive exhibition environment. We just wrapped the components we used. This concept easily allows to extend our little framework with more features and interaction components like zoom controls. It is a lightweight solution to support those features we need in our application.
 There are some open source libraries which wrap Mapbox GL JS. If you want to work with one of those librares, you should have a look at [react-mapbox-gl](https://github.com/alex3165/react-mapbox-gl) or [react-map-gl](https://github.com/uber/react-map-gl).
