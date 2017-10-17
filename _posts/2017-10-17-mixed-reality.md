@@ -15,12 +15,15 @@ experience - just showing a first person view is very unnatural and the last
 well known motion video failed horribly (but not for that reason), which was the
 trashy Doom movie. And that was just a small anecdote to its origins.
 
+![Actress illuminates herself][self-illu]
+
 <!--end-of-excerpt-->
 
 *Full disclaimer: I wrote my bachelor thesis about building a general purpose 
 mixed reality pipeline, this is a summary of it. You can access the thesis 
 on [my personal website.][thesis]*
 
+[self-illu]: /images/2017-10-17-mixed-reality/self-illu.png
 [thesis]: http://miosblog.de/MixedRealityMedia-Thesis
 
 # Table of Contents
