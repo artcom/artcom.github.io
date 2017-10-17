@@ -186,4 +186,4 @@ To query features and to connect a layer with a data source, a unique feature id
 
 # Conclusion
 The presented solution works well in our interactive exhibition environment. We just wrapped the components we used. This concept easily allows to extend our little framework with more features and interaction components like zoom controls. It is a lightweight solution to support those features we need in our application.
-There are some open source libraries which wrap Mapbox GL JS. If you want to work with one of those librares, you should have a look at [react-mapbox-gl](https://github.com/alex3165/react-mapbox-gl) or [react-map-gl](https://github.com/uber/react-map-gl).
+There are some open source libraries which wrap Mapbox GL JS. If you want to work with one of those, you should have a look at [react-mapbox-gl](https://github.com/alex3165/react-mapbox-gl) or [react-map-gl](https://github.com/uber/react-map-gl).
