@@ -9,7 +9,7 @@ Mixed Reality is a recently more popular addition to the current XR trend. The
 very first marketing material of the HTC Vive included Mixed Reality scenes to
 communicate Virtual Reality - and it makes a whole lot of sense!
 
-VR and AR are currently in a funny state where all enthuisasts want to create
+VR and AR are currently in a funny state where all enthusiasts want to create
 content but it doesn't sell at all. One major reason is communication of the
 experience - just showing a first person view is very unnatural and the last
 well known motion video failed horribly (but not for that reason), which was the
@@ -19,7 +19,7 @@ trashy Doom movie. And that was just a small anecdote to its origins.
 
 *Full disclaimer: I wrote my bachelor thesis about building a general purpose 
 mixed reality pipeline, this is a summary of it. You can access the thesis 
-on [my personal github account.][thesis]*
+on [my personal website.][thesis]*
 
 [thesis]: http://miosblog.de/MixedRealityMedia-Thesis
 
@@ -110,7 +110,7 @@ Doing Mixed Reality is a problem on multiple fronts. One begins with video
 capturing. You'll notice a offset between real time and the footage your system
 received. The general latency is between 50ms - 500ms, which is, assuming
 29.97fps content capture, between 2 - 16 frames.<sup id="o-latency">[2](#latency)</sup>
-This is between noticable to very noticeable ranges.
+This is between noticeable to very noticeable ranges.
 
 Finally you should have an artistic vision. Mixed Reality is sometimes unfitting
 for some applications. [Fantastic Contraption][fant-contr] decided, that an
@@ -164,7 +164,7 @@ var fov = 180.0 / Math.PI * 2.0 * Math.Atan(verticalSize / (2f * focalLength));
 
 It won't matter what camera setup you will use, at some point or another you'll
 have to deal with a latency between the received frame of your camera and the
-realtime virtual world. One very simple and feasible solution is to store
+real time virtual world. One very simple and feasible solution is to store
 framebuffer for as long as needed until a camera capture frame is received. This
 operation is relatively cheap, but costs you a good amount of memory on your
 GPU to hold these framebuffers. This calculator should give you an impression
@@ -174,7 +174,7 @@ how much data it is you need to hold temporarily on your GPU:
 
 In your best case, you'll need a ring buffer with a fixed size, since the
 input latency should be a fixed amount of time that you can simply measure. By
-looking up your cameras specifications you can use following formular to
+looking up your cameras specifications you can use following formula to
 calculate the number of needed framebuffers.
 
 ``` csharp
@@ -210,7 +210,7 @@ Even on professional sets you always have stuff in your way, which will give you
 at most a box with three sides, bottom and top. On amateur sets you usually have
 one to two sides and only the bottom. The problem arises once the camera films
 outside the boundaries, resulting in non-greenscreen pixels - literally garbage
-pixels. Luckily you're already in a realtime 3D engine, which allows you to
+pixels. Luckily you're already in a real time 3D engine, which allows you to
 rebuild the boundaries of your set. Since OSVR and other libraries usually
 assume that ```1 unit = 1 meter```, you can rebuild your real world set and 
 the real world environment easily. Add the set to a culling layer and clear the
@@ -323,7 +323,7 @@ float3 contrast(float3 rgb, float c) {
 ### Saturation
 
 To (de)saturate an image, you will need to calculate the color intensity and
-then lerp iit with a saturation factor ```s```:
+then lerp it with a saturation factor ```s```:
 
 ``` c
 float3 saturation(float3 rgb, float s) {
@@ -345,7 +345,7 @@ The options we have here are:
    A front plane is displayed, after it follows a chroma-keyed video and then
    the virtual background. This is the most accurate image generation, if the
    front image is generated correctly and not modified by post effects or
-   deffered shading.
+   deferred shading.
 2. Alpha Masking:  
    A front alpha mask of the geometry is being generated, then the actor is
    mixed with a full render image of the scenery's background. The resulting
@@ -456,6 +456,36 @@ fixed4 frag(v2f i) : SV_Target {
 }
 ```
 
+# Conclusion & Implementation
+
+<video controls preload="metadata" width="100%">
+  <source src="/images/2017-10-02-mixed-reality/a_shot.mp4">
+</video>
+
+One of the problems I have yet to investigate throughout and write a well
+working solution for is calibrating the offset between the camera and the 
+controller. [Serious Sam VR uses a back-propagation of transform matrices][ssvr],
+other [use object tracking][opencv]. In a perfect world, I'd like to have an
+approach where you can hold a controller (or headset) in front of the camera and
+with computer vision techniques it should be possible to get pretty well fitting
+results from that. Realistically it's something between OpenCV checkerboards and
+my idea - which would make the headset / controller look somewhat hideous.
+
+While building this pipeline, I used Unity3D - which was not without issues.
+Regardless, it was a fun excersize in building a general purpose pipeline that
+is applicable to all sorts of engines, render backends and devices. From there
+it's possible to port that for other AR/VR cases and have a good platform to
+tweak and expand upon for more experiences. The "in progress" repository can
+be found in [the Components repository][comp-repo]. There's a bunch of different
+steps and progress to be found, as well as application helpers and an unfinished
+UI.  
+A Unity package, as well as the source code and a prefab for quick
+implementation can be found in [ART+COMs repository][artcom-repo].
+
+[ssvr]: https://www.youtube.com/watch?v=c_An0vxvPnk
+[opencv]: https://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html
+[comp-repo]: https://github.com/DarkMio/MixedRealityMedia-Components/
+[artcom-repo]: https://github.com/artcom/MixedReality
 
 # Footnotes
 
