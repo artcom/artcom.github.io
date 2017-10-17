@@ -7,7 +7,7 @@ title: Self-hosted project management tools from the view of a developer
 
 Board:
 - Tickets
-- Configurable columns
+- Configurable columns (best with sub-columns)
 - WIP (work in progress) limits
 
 Ticket:
@@ -15,29 +15,31 @@ Ticket:
 - Comments
 - Attach media
 - Set relations to other tickets
-- Use (multiple) colored tags to categorize
+- Use colored tags to categorize
 - Assignable
 - Subscribe to changes
 
 What else:
 - Communcication channels priority: Ticket > Email > Chat
 (https://about.gitlab.com/2016/03/03/start-with-an-issue/)
-- Wiki/ Documentation
+- Wiki / Documentation
 - Process for code reviews
+- Groups of tickets (e.g. Milestones)
+- User management
 
-The communcication of all stakeholders should converge in the corresponding ticket.
-It's a always frustrating to collect communcication parts from different sources, like
-email, chats and comments. A fortior, if external collbaborateurs take part they should be easily
-integrated in the process to prevent communcation overflow.
+The communcication of all stakeholders should converge in the corresponding tickets.
+It's always frustrating to collect communcication parts from different sources, like
+email, chats and comments. Also, when external collaborators participate in the project, they should be easily
+integrated into the process to prevent communcation desaster.
 
-## What not
+## What we don't need in tickets
 
-- Progress per ticket: Tickets should comprise small tasks (max. 2-3 days).
-- Forced to daily update the status.
-- Deadlines per Ticket: A ticket comprises a small task. Multiple tasks can be wrapped in a milestone,
-which can be used to track the overall progress and set due dates.
-- Documentation: Produces to much overhead and it is in fact the wrong place. Completed tasks should be
-documentated in a separate document (e.g. Wiki). Progress and impediments should be discussed in daily Stand Ups.
+- Progress: Tickets should comprise small tasks (max. 2-3 days)
+- Enforcement of daily status updates
+- Deadlines: A ticket comprises a small task. Multiple tasks can be wrapped in a milestone,
+which can be used to track the overall progress and set due dates
+- Documentation: Produces too much overhead and we consider it the wrong place. Completed tasks should be
+documentated in a separate document (e.g. Wiki). Progress and impediments should be discussed in the Daily Stand Ups.
 Decisions should be updated in the ticket description, not as comment.
 
 ## Overview
@@ -65,13 +67,13 @@ sufficient, because it is only allowed to set one per ticket.
 
 ### GitLab
 
-Gitlab offers one issue board per repository. Accidently, we cannot set WIP limits
+Gitlab offers one issue board per repository. Unfortunately, we cannot set WIP limits.
 Relations to other tickets are only available in an Enterprise Edition with costs.
 
 ### Taiga
 
-Taiga offers most of the required features, but the offered processes are very strict.
-E.g. a Kanban board can only contain user stories.
+Taiga offers most of the required features, but the offered processes are very strict and tailored for Scrum.
+E.g. a Kanban board can only contain user stories. Usability is also improvable.
 
 ### Kanboard
 
@@ -81,4 +83,4 @@ Personal Kanban Board.
 
 ### JIRA
 
-The tool we want, providing all required features and more. But it is with costs.
+The tool we would prefer, providing all required features and more. But it is with costs.
