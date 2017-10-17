@@ -22,7 +22,7 @@ Requirements:
 The idea is to render a map as a React component and to render features as child components as follows.
 
 Example:
-```xml
+```
   <Map>
     <PointFeature
       data={ [longitude, latitude] }
@@ -49,8 +49,7 @@ Required as properties:
 - Map Style
 - Tile Server Url
 
-```js
-
+```
   componentDidMount() {
 
     // set the tileserver as source in the style object
@@ -65,20 +64,19 @@ Required as properties:
   }
 ```
 
-```js
+```
   render() {
 
     <div ref={ e => { this.mapContainer = e } }>
       ...
     </div>
   }
-
 ```
 
 ##### A feature component needs access to the map object
 To add a feature, the map object must be provided to every child with the help of `React.Children.map` and `React.cloneElement`.
 
-```js
+```
   render() {
 
     const children = React.Children.map(this.props.children, child =>
@@ -87,13 +85,12 @@ To add a feature, the map object must be provided to every child with the help o
 
     ...
   }
-
 ```
 
 ##### We have to wait until Mapbox is ready
 We have to prevent rendering the children when the state of the component is not *ready*. We have to wait until the first render callback is called by Mapbox to set the components state to *ready*. This triggers a new *render()* call. Now the child components are allowed to get rendered.
 
-```js
+```
   componentDidMount() {
 
     this.map.on("render", () => {
@@ -104,7 +101,7 @@ We have to prevent rendering the children when the state of the component is not
   }
 ```
 
-```js
+```
   render() {
 
     ...
@@ -113,14 +110,12 @@ We have to prevent rendering the children when the state of the component is not
       { this.state.isReady && children }
     </div>
   }
-
 ```
 
 ##### Cleanup: We have to remove the features before we remove the map, else we run into errors.
 When the component will be removed from the DOM, *componentWillUnmount()* is called. This method is called top down in the component hierarchy. So the cleanup method of our *Map* component is called before its children. If we remove the map here, we evoke errors because the map features have to be removed first. The trick is to call the map removal in a separate task which is queued and executed after all children are unmounted.
 
-```js
-
+```
   componentWillUnmount() {
 
     setTimeout(() => this.map.remove())
@@ -132,8 +127,7 @@ A map feature can also be realized as a React component. To add a feature like a
 To query features and to connect a layer with a data source, a unique feature id is required. We can provide all these informations to the feature component by properties. We just need to mount, update and unmount these components correctly. Rendering by react is not necessary here.
 
 ##### Map feature lifecycle
-```js
-
+```
   componentDidMount() {
 
     // Add source and layer
@@ -154,7 +148,7 @@ To query features and to connect a layer with a data source, a unique feature id
   }
 ```
 
-```js
+```
   componentDidUpate() {
 
     // e.g update paint properties
@@ -169,7 +163,7 @@ To query features and to connect a layer with a data source, a unique feature id
   }
 ```
 
-```js
+```
   componentWillUnmount() {
 
     // Remove source and layer
@@ -181,7 +175,7 @@ To query features and to connect a layer with a data source, a unique feature id
   }
 ```
 
-```js
+```
   render() {
 
     // Do nothing :)
