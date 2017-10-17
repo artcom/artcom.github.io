@@ -92,7 +92,7 @@ front of the user and one is rendering behind him. Also you'll need to store a
 few framebuffers, so have a few hundred MB of VRAM left.
 
 [gs-book]: https://www.amazon.com/dp/B01JXR0FQE
-[gs-setup]: /images/2017-10-02-mixed-reality/gs-setup.png
+[gs-setup]: /images/2017-10-17-mixed-reality/gs-setup.png
 [owlch]: https://owlchemylabs.com/
 [zed camera]: https://www.stereolabs.com/
 [vive tracker]: https://www.vive.com/eu/vive-tracker-for-developer/
@@ -133,7 +133,7 @@ a visual representation of the pipeline:
 performance of the final pipeline. You can skip them for an initial
 implementation.*
 
-[pipeline]: /images/2017-10-02-mixed-reality/pipeline.png
+[pipeline]: /images/2017-10-17-mixed-reality/pipeline.png
 
 ## Virtual Projection Parameters
 
@@ -234,7 +234,7 @@ In Unity such a setup would look like that:
 
 ![Unity Camera Setup][unity-cam]
 
-[unity-cam]: /images/2017-10-02-mixed-reality/stencil-unity.png
+[unity-cam]: /images/2017-10-17-mixed-reality/stencil-unity.png
 
 ## Chroma Keying
 
@@ -403,7 +403,7 @@ fixed4 frag(v2f i) : SV_Target {
 }
 ```
 
-[tri-graph]: /images/2017-10-02-mixed-reality/tri-graph.png
+[tri-graph]: /images/2017-10-17-mixed-reality/tri-graph.png
 
 ## Light Reproduction
 
@@ -459,7 +459,7 @@ fixed4 frag(v2f i) : SV_Target {
 # Conclusion & Implementation
 
 <video controls preload="metadata" width="100%">
-  <source src="/images/2017-10-02-mixed-reality/a_shot.mp4">
+  <source src="/images/2017-10-17-mixed-reality/a_shot.mp4">
 </video>
 
 One of the problems I have yet to investigate throughout and write a well
