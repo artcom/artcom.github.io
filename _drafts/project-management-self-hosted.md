@@ -21,7 +21,6 @@ Ticket:
 
 What else:
 - Communcication channels priority: Ticket > Email > Chat
-(https://about.gitlab.com/2016/03/03/start-with-an-issue/)
 - Wiki / Documentation
 - Process for code reviews
 - Groups of tickets (e.g. Milestones)
@@ -56,7 +55,7 @@ Decisions should be updated in the ticket description, not as comment.
 
 ## In detail
 
-### Redmine + Agile Plugin
+### [Redmine + Agile Plugin](https://www.redmineup.com/pages/plugins/agile)
 
 No possibility to configure columns per board (project). Here, columns correspond to
 a "status". But a "status" is an overall attribute for all projects and only can be edited by the
@@ -65,22 +64,25 @@ administrator.
 Furthermore there are no options to set mulitple tags per ticket. "Categories" which are supported are not
 sufficient, because it is only allowed to set one per ticket.
 
-### GitLab
+### [GitLab](https://about.gitlab.com/)
 
 Gitlab offers one issue board per repository. Unfortunately, we cannot set WIP limits.
 Relations to other tickets are only available in an Enterprise Edition with costs.
 
-### Taiga
+### [Taiga](https://taiga.io/)
 
 Taiga offers most of the required features, but the offered processes are very strict and tailored for Scrum.
 E.g. a Kanban board can only contain user stories. Usability is also improvable.
 
-### Kanboard
+### [Kanboard](https://kanboard.net/)
 
 Free open-source tool, which offers a lot of the required features. It's very slim and has low requirements.
 Because it's missing a possibility to subscribe to changes and it's visual backwardness, it's more useful as a
 Personal Kanban Board.
 
-### JIRA
+### [JIRA](https://www.atlassian.com/software/jira)
 
 The tool we would prefer, providing all required features and more. But it is with costs.
+
+## References
+* <https://about.gitlab.com/2016/03/03/start-with-an-issue>
