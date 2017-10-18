@@ -1,11 +1,16 @@
 ---
 layout: post
 title: Interactive Map Applications with React and Mapbox GL JS
+author: <a href="https://github.com/j3nsm4n">Jens Eraßmy</a>
+excerpt_separator: <!--end-of-excerpt-->
 ---
+
 <img style="margin-bottom:15px;" src="{{site.url}}/images/interactive-maps-with-react-and-mapbox/globe-1920.jpg"/>
 For the [Bird Observatory Center in Skagen](http://www.skagenfuglestation.dk/) we' ve decided to use vector rendered maps. We wanted to find a way to create our map applications as React components.
 
-This post gives a survey of our solution how to wrap the [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) Api with React. We presume some previous knowledge about React, ES6 and Mapbox GL JS.
+This post gives a survey of our solution how to wrap the [Mapbox GL JS](https://github.com/mapbox/mapbox-gl-js) Api with React.
+<!--end-of-excerpt-->
+We presume some previous knowledge about React, ES6 and Mapbox GL JS.
 
 Requirements:
 
