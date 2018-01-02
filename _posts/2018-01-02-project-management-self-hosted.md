@@ -1,7 +1,14 @@
 ---
 layout: post
-title: Self-hosted project management tools from the view of a developer
+title: Self-hosted project management tools
+author: <a href="https://github.com/j3nsm4n">Jens Eraßmy</a>
+excerpt_separator: <!--end-of-excerpt-->
 ---
+
+Physical boards are most flexible when it comes to process needs. That changes when external collaboration and remote access are mandatory. Here is a short survey of requirements (defined by a developer) and potential tools.
+
+<img style="margin-bottom:15px;" src="{{site.url}}/images/2018-01-02-project-management-self-hosted/board.png"/>
+<!--end-of-excerpt-->
 
 ## What we need
 
