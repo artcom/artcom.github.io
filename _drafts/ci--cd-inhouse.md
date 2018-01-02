@@ -4,37 +4,33 @@ title: 'The case for Continuous Delivery & Integration'
 author: <a href="https://github.com/jkrumow/">Julian Krumow</a>
 excerpt_separator: <!--end-of-excerpt-->
 ---
-## Prinzip
+## Basic Principle
 
-Continuous Delivery bedeutet, wiederkehrende und komplexe Vorgänge in der Softwareproduktion zu automatisieren, da eine Maschine diese Aufgaben besser erledigen kann. Das Ergebnis ist konstante Qualität der Software. Es müssen keine Entwickler mehr diese Aufgaben von Hand erledigen, was ermüdend wirken kann und dadurch Flüchtigkeitsfehler entstehen.
+Continuous Delivery is all about automating complex actions in software production that repeat themself over and over. Simply because a machine is better at that than a human. Human beings have bad days, can be unattentive or just simply inexperienced.
 <!--end-of-excerpt-->
 
-## Automatisierbare Aufgaben können hierbei sein
+## What automatable tasks look like
 
-- testen der Anwendung oder Teile davon auf korrekte Funktion
-- befüllen einer Anwendung mit neuen Inhalten
-- zentrale Verwaltung verschlüsselter, sicherheitsrelevanter Informationen
-  (Zertifikate, Passwörter, IDs)
-- signieren der Anwendung mit oben genannten Informationen
-- erzeugen einer Installationsdatei die an den Kunden oder im Hause
-  ausgeliefert werden kann
+- testing of an application or parts of it
+- adding new content to an application
+- managing cryptographic information (keys and certificates)
+- signing application code using the aforementioned information
+- creating of an installation package that could be delivered to the customer
 
-## Fehler die dadurch verhindert werden können
+## What errors could be prevented using CI/CD
 
-- Abstürze duch fehlerhafte Installationen beim Kunden oder auf Demosystemen im
-  Hause
-- fehlende Features und Inhalte in der Anwendung
-- fehlerhafte Signaturen und Ids
-- versehentliche Installation der falschen Version einer Anwendung
-- überstrapazieren von Mitarbeitern mit monotonen Aufgaben, die Nachlässigkeit und Unaufmerksamkeit zu Folge haben können
+- Crashes cuased by faulty installation on customer's infrastructure / devices or on our own staging systems
+- missing features and content
+- invalid signatures, certificates and ids
+- installation of the wrong verson of an application
 
-## Fallbeispiele
+## Reals World Examples
 
-### In einem Kundenprojekt muss ein Backend System geliefert werden
+### A backend system has to delivered to the customer
 
-Beispiele: Volkswagen, BMW, Deutsche Bank
+Example: Volkswagen, BMW, Deutsche Bank
 
-Automatisierte Prozesse:
+Automated tasks:
 
 - automatisiertes testen des Programmcodes
 - erstellen des Installationspaketes
