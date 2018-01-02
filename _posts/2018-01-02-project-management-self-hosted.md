@@ -86,3 +86,7 @@ The tool we would prefer, providing all required features and more. But it is wi
 
 ## References
 * <https://about.gitlab.com/2016/03/03/start-with-an-issue>
+
+## Disclaimer
+
+This article is subjectively biased and does not speak for every developer @ ART+COM.
