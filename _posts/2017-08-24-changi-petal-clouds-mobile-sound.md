@@ -68,7 +68,7 @@ The client immediately acknowledges the message by returning the `time` value:
 }
 ```
 
-## Dealing with jitter
+## Dealing with Jitter
 
 The server calculates the time it took to get the timestamp back and buffers about 10 of those lag values. To calculate the current average lag of the system first sorts all lag values and denoises them by determining the `standard deviation` and removing all values which are above `median + standard deviation`. Then all remaining values are simply averaged. This makes the system react a little slower to sudden changes in timing, but more stable.
 
