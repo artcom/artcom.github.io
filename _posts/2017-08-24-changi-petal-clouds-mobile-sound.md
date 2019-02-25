@@ -11,18 +11,18 @@ Recently a new kinetic installation went live in Terminal 4 at Changi Airport, S
 
 <!--end-of-excerpt-->
 
-For the artistic, non-technical description of the project please find the official [artcom project page] and the official [Changi Airport Video]. The post here focuses on the audio sync features of the installation.
+For the artistic, non-technical description of the project please see the official [artcom project page] and [Changi Airport Video]. The post focuses on the audio sync features of the installation.
 
 [artcom project page]: https://artcom.de/en/project/petalclouds/
 [Changi Airport Video]: https://www.youtube.com/watch?v=OgMo6ZBc5lw
 
 ## Choreography and Music
 
-When the kinetic installation performs its choreography by moving its golden aluminium rings across the ceiling it will do this to a music composed only for this purpose by islandic composer [Ólafur Arnalds]. On the terminal floor are multiple vantage points - areas with equipped with speakers where travelers can watch the choreography and listen to the music.
+When the kinetic installation performs its choreography by moving its golden aluminium rings across the ceiling it will do this to a music composed only for this purpose by islandic composer [Ólafur Arnalds]. On the terminal floor are multiple vantage points - areas equipped with speakers where travelers can watch the choreography and listen to the music.
 
 [Ólafur Arnalds]: http://olafurarnalds.com/
 
-Aside from the fixed locations, travellers can listen to the music in quiet over their mobile phone from within the iChangi App([iOS], [Android]) anywhere in the terminal. 
+Aside from the fixed locations, travellers can also listen to the music in quiet over their mobile phone from within the iChangi App([iOS], [Android]) anywhere in the terminal. 
 
 [Android]: https://play.google.com/store/apps/details?id=com.changiairport.cagapp&hl=en
 [iOS]: https://itunes.apple.com/us/app/ichangi/id391730848?mt=8
